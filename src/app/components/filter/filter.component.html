@@ -1,0 +1,67 @@
+<div class="blog-filter">
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search..."
+      (input)="onSearchTermChange($event)"
+    />
+  </div>
+
+  <!-- (input)="filterBlogPosts()" -->
+
+  <!-- Sort Dropdown -->
+  <div class="sort-dropdown">
+    <label for="sort">Sort By:</label>
+    <select id="sort" (change)="onSortOptionChange($event)">
+      <option value="date">Date</option>
+      <option value="title">Title</option>
+      <option value="popularity">Popularity</option>
+    </select>
+  </div>
+
+  <!-- Filter by Categories -->
+  <div class="filter-section">
+    <h3>Filter by Categories</h3>
+    <div class="filter-buttons">
+      <button
+        class="filter-btn"
+        [class.active]="isActive('categories', 'all')"
+        (click)="updateActiveFilters('categories', 'all')"
+      >
+        All
+      </button>
+      <button
+        *ngFor="let category of categories || []"
+        class="filter-btn"
+        [class.active]="isActive('categories', category.toLowerCase())"
+        (click)="updateActiveFilters('categories', category.toLowerCase())"
+      >
+        {{ category }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter by Tags -->
+  <div class="filter-section">
+    <h3>Filter by Tags</h3>
+    <div class="filter-buttons">
+      <button
+        class="filter-btn"
+        [class.active]="isActive('tags', '')"
+        (click)="updateActiveFilters('tags', '')"
+      >
+        All
+      </button>
+      <button
+        *ngFor="let tag of tags || []"
+        class="filter-btn"
+        [class.active]="isActive('tags', tag.toLowerCase())"
+        (click)="updateActiveFilters('tags', tag.toLowerCase())"
+      >
+        {{ tag }}
+      </button>
+    </div>
+  </div>
+</div>

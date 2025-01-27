@@ -1,0 +1,111 @@
+<!-- Toggler button visible only on mobile -->
+<div
+  *ngIf="isMobile()"
+  class="navbar-toggler text-2xl"
+  (click)="toggleNavbar()"
+>
+  M
+</div>
+
+<!-- Navigation -->
+
+<nav
+  class="navigation grid grid-cols-4 gap-4"
+  [ngClass]="{ open: isNavbarOpen, closed: !isNavbarOpen }"
+>
+  <!-- Left empty column -->
+  <!-- <div class="col-span-1"></div> -->
+
+  <!-- Main navigation -->
+  <div
+    class="col-span-2 sm:col-span-1 flex flex-col md:flex-row md:items-start md:justify-between"
+  >
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/" routerLinkActive="active" class="nav-item">home</a>
+      <a routerLink="/projects" routerLinkActive="active" class="nav-item">
+        projects
+      </a>
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/about" routerLinkActive="active" class="nav-item">
+        about
+      </a>
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/blog" routerLinkActive="active" class="nav-item">blog</a>
+      <a routerLink="/codegnettes" routerLinkActive="active" class="nav-item">
+        codegnettes
+      </a>
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/contact" routerLinkActive="active" class="nav-item">
+        contact
+      </a>
+    </div>
+  </div>
+
+  <!-- Right empty column -->
+  <!-- <div class="col-span-1"></div> -->
+</nav>
+
+<!-- Navigation -->
+<!-- <nav
+  class="navigation grid grid-cols-4 gap-4"
+  [ngClass]="{ open: isNavbarOpen, closed: !isNavbarOpen }"
+>
+  
+  <div
+    class="col-span-2 sm:col-span-1 flex flex-col md:flex-row md:items-start md:justify-between"
+  >
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/" routerLinkActive="active" class="nav-item">home</a>
+      <a routerLink="/projects" routerLinkActive="active" class="nav-item">
+        projects
+      </a>
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/about" routerLinkActive="active" class="nav-item"
+        >about</a
+      >
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/blog" routerLinkActive="active" class="nav-item">blog</a>
+      <a routerLink="/codegnettes" routerLinkActive="active" class="nav-item">
+        codegnettes
+      </a>
+    </div>
+    <div class="nav-col flex flex-col items-start">
+      <a routerLink="/contact" routerLinkActive="active" class="nav-item">
+        contact
+      </a>
+    </div>
+  </div>
+
+</nav> -->
+
+<!-- Navigation -->
+<!-- <nav
+  class="navigation col-span-4 row-span-1 bg-"
+  [ngClass]="{ open: isNavbarOpen, closed: !isNavbarOpen }"
+>
+  <div class="nav-col flex flex-col justify-between items-start">
+    <a routerLink="/" routerLinkActive="active" class="nav-item">home</a>
+    <a routerLink="/projects" routerLinkActive="active" class="nav-item">
+      projects
+    </a>
+  </div>
+  <div class="nav-col flex flex-col justify-between items-start">
+    <a routerLink="/about" routerLinkActive="active" class="nav-item">about</a>
+  </div>
+  <div class="nav-col flex flex-col justify-between items-start">
+    <a routerLink="/blog" routerLinkActive="active" class="nav-item">blog</a>
+    <a routerLink="/codegnettes" routerLinkActive="active" class="nav-item">
+      codegnettes
+    </a>
+  </div>
+  <div class="nav-col flex flex-col justify-between items-start">
+    <a routerLink="/contact" routerLinkActive="active" class="nav-item">
+      contact
+    </a>
+  </div>
+</nav> -->

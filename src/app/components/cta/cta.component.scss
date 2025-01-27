@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+
+// LAYOUT - START
+.section-cta {
+  margin: 15vh 0 20vh;
+  height: 70dvh;
+}
+
+// LAYOUT - END
+
+// BUTTONS - START
+
+.cta-btn {
+  cursor: pointer;
+}
+
+.cta-btn-primary {
+  font-size: 8em;
+}
+
+// BUTTONS - END
+
+// PAGE STYLES - START
+
+.cta-about {
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+// PAGE STYLES - END

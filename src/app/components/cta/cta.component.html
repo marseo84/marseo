@@ -1,0 +1,32 @@
+<section
+  class="section-cta grid grid-cols-4 gap-4 items-start"
+  [ngClass]="styleClass"
+>
+  <div class="col-span-1 self-start">
+    <p class="cta-tagline text-9xl">{{ ctaTaglinePrimary }}</p>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-2 self-start">
+    <a
+      [routerLink]="ctaBtnPrimaryLink"
+      class="cta-btn cta-btn-primary px-4 py-10 rounded-md bg-primary text-white hover:bg-primary-dark transition"
+    >
+      {{ ctaBtnPrimary }}
+    </a>
+  </div>
+  <div
+    *ngIf="ctaTaglineSecondary || ctaBtnSecondary"
+    class="col-span-2 self-end"
+  >
+    <p class="cta-tagline-secondary text-2xl">{{ ctaTaglineSecondary }}</p>
+  </div>
+  <div *ngIf="ctaBtnSecondary" class="col-span-1 self-end mt-8">
+    <a
+      *ngIf="ctaBtnSecondary"
+      [routerLink]="ctaBtnSecondaryLink"
+      class="cta-btn cta-btn-secondary text-4xl px-4 py-2 rounded-md bg-secondary text-white hover:bg-secondary-dark transition"
+    >
+      {{ ctaBtnSecondary }}
+    </a>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<div class="container px-4 sm:px-6 lg:px-8">
+  <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <!-- search/filter column -->
+    <div class="col-span-1 lg:sticky lg:top-0 self-start">
+      <div class="p-4 bg-gray-100 rounded shadow">
+        <!-- Add filter/search content here -->
+        <p class="text-sm font-semibold">Filters/Search</p>
+      </div>
+    </div>
+
+    <div *ngIf="post">
+      <div class="page-wrapper">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
+
+        <div *ngFor="let heading of post.content.headings">
+          <h2>{{ heading }}</h2>
+          <div *ngFor="let paragraph of post.content.paragraphs">
+            <p *ngIf="paragraph.name === heading">{{ paragraph.text }}</p>
+          </div>
+        </div>
+
+        <div *ngFor="let snippet of post.content.codeSnippets">
+          <pre>{{ snippet.snippet }}</pre>
+        </div>
+
+        <div *ngFor="let media of post.content.media.images">
+          <img [src]="media.url" [alt]="media.alt" class="img-fluid" />
+        </div>
+        <div *ngFor="let video of post.content.media.videos">
+          <video [src]="video.url" controls>{{ video.caption }}</video>
+        </div>
+
+        <div *ngIf="post.content.conclusion">
+          <h3>Conclusion</h3>
+          <p>{{ post.content.conclusion.summary }}</p>
+          <p>{{ post.content.conclusion.callToAction }}</p>
+        </div>
+
+        <div>
+          <p>
+            Last Updated: {{ post.lastUpdateDate | date : "MMMM dd, yyyy" }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

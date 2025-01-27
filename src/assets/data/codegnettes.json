@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "title": "Quick JavaScript Trick",
+    "description": "Learn a quick way to optimize loops.",
+    "codeImage": {
+      "html": null,
+      "css": null,
+      "svg": null,
+      "javascript": "for (let i = 0; i < 10; i++) { console.log(i); }"
+    },
+    "tags": ["JavaScript", "Tips"],
+    "date": "2024-12-05"
+  }
+]

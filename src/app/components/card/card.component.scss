@@ -1,0 +1,84 @@
+@import "./styles/variables";
+
+.card {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  // border-radius: 2px;
+  height: 16em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 15em;
+}
+
+.card-title-wrapper {
+  height: 25%;
+}
+
+.card-description-wrapper {
+  height: 30%;
+}
+
+.card-tags-wrapper {
+  height: 25%;
+}
+
+.card-btn-wrapper {
+  height: 10%;
+}
+
+// .code-preview {
+//   margin-top: 1rem;
+// }
+
+.tags span {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #333;
+  padding: 0.25rem 0.5rem 0rem;
+  margin: 0 0.25rem 0.25rem 0;
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
+
+.details-btn {
+  font-size: 1rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  // text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  margin: 0.5em 0 0 0;
+  text-decoration: none;
+  width: auto;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  // @media (min-width: $breakpoint) {
+  //   justify-content: center;
+  //   margin-top: 2rem;
+  // }
+}
+
+.details-btn:hover {
+  color: orangered;
+}
+
+// .details-btn {
+//   padding: 0.5rem;
+//   text-align: center;
+//   cursor: pointer;
+//   border: 1px solid white;
+//   border-radius: 4px;
+//   transition: background-color 0.3s, color 0.3s;
+// }
+
+// .details-btn:hover {
+//   background-color: #0073e6;
+//   color: white;
+// }

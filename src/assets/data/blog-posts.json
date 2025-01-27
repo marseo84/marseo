@@ -1,0 +1,237 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding Flexbox",
+    "slug": "understanding-flexbox",
+    "description": "Learn how Flexbox works in CSS.",
+    "category": "css",
+    "tags": ["CSS", "Flexbox"],
+    "publishDate": "2024-12-05",
+    "lastUpdateDate": "2024-12-15",
+    "popularity": 95,
+    "codeImage": {
+      "html": "<div class='flex-container'><div>1</div><div>2</div><div>3</div></div>",
+      "css": ".flex-container { display: flex; gap: 10px; }",
+      "svg": null,
+      "javascript": null
+    },
+    "content": {
+      "headings": [
+        "Introduction to Flexbox",
+        "Why Use Flexbox?",
+        "Practical Examples"
+      ],
+      "subheadings": ["Basic Syntax", "Flexbox Properties", "Common Use Cases"],
+      "paragraphs": [
+        {
+          "name": "introduction",
+          "text": "Flexbox, short for the Flexible Box Module, is a CSS layout model designed to arrange elements in a predictable and flexible manner, even when the size of the elements is unknown."
+        },
+        {
+          "name": "flex-direction",
+          "text": "One of the primary properties in Flexbox is `flex-direction`, which determines the direction of the main axis. Options include row, column, row-reverse, and column-reverse."
+        },
+        {
+          "name": "practical-use",
+          "text": "Flexbox is particularly useful for creating responsive navigation bars, centering elements, and aligning items dynamically without using floats or positioning hacks."
+        }
+      ],
+      "lists": {
+        "ordered": [
+          "Flex Direction",
+          "Justify Content",
+          "Align Items",
+          "Align Self"
+        ],
+        "unordered": [
+          "Cross-Browser Support",
+          "Versatile Layouts",
+          "Reduced Complexity"
+        ]
+      },
+      "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],
+      "codeSnippets": [
+        {
+          "language": "html",
+          "snippet": "<div class='test'>test</div>"
+        },
+        {
+          "language": "css",
+          "snippet": ".flex-container { display: flex; justify-content: center; align-items: center; }"
+        }
+      ],
+      "media": {
+        "images": [
+          {
+            "url": "https://example.com/flexbox-diagram.png",
+            "alt": "Diagram illustrating Flexbox layout properties"
+          }
+        ],
+        "videos": [
+          {
+            "url": "https://example.com/flexbox-tutorial.mp4",
+            "caption": "Introduction to Flexbox - Video Tutorial"
+          }
+        ]
+      }
+    },
+    "conclusion": {
+      "summary": "Flexbox simplifies CSS layout by providing flexible alignment, making it a go-to choice for modern web development.",
+      "callToAction": "Try incorporating Flexbox into your next project to see its power in action!"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Blog Post 2",
+    "slug": "blog-post-2",
+    "description": "Learn how Flexbox works in CSS.",
+    "category": "css",
+    "tags": ["CSS", "Flexbox"],
+    "publishDate": "2024-12-05",
+    "lastUpdateDate": "2024-12-15",
+    "popularity": 80,
+    "codeImage": {
+      "html": "<div class='flex-container'><div>1</div><div>2</div><div>3</div></div>",
+      "css": ".flex-container { display: flex; gap: 10px; }",
+      "svg": null,
+      "javascript": null
+    },
+    "content": {
+      "headings": [
+        "Introduction to Flexbox",
+        "Why Use Flexbox?",
+        "Practical Examples"
+      ],
+      "subheadings": ["Basic Syntax", "Flexbox Properties", "Common Use Cases"],
+      "paragraphs": [
+        {
+          "name": "introduction",
+          "text": "Flexbox, short for the Flexible Box Module, is a CSS layout model designed to arrange elements in a predictable and flexible manner, even when the size of the elements is unknown."
+        },
+        {
+          "name": "flex-direction",
+          "text": "One of the primary properties in Flexbox is `flex-direction`, which determines the direction of the main axis. Options include row, column, row-reverse, and column-reverse."
+        },
+        {
+          "name": "practical-use",
+          "text": "Flexbox is particularly useful for creating responsive navigation bars, centering elements, and aligning items dynamically without using floats or positioning hacks."
+        }
+      ],
+      "lists": {
+        "ordered": [
+          "Flex Direction",
+          "Justify Content",
+          "Align Items",
+          "Align Self"
+        ],
+        "unordered": [
+          "Cross-Browser Support",
+          "Versatile Layouts",
+          "Reduced Complexity"
+        ]
+      },
+      "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],
+      "codeSnippets": [
+        {
+          "language": "css",
+          "snippet": ".flex-container { display: flex; justify-content: center; align-items: center; }"
+        }
+      ],
+      "media": {
+        "images": [
+          {
+            "url": "https://example.com/flexbox-diagram.png",
+            "alt": "Diagram illustrating Flexbox layout properties"
+          }
+        ],
+        "videos": [
+          {
+            "url": "https://example.com/flexbox-tutorial.mp4",
+            "caption": "Introduction to Flexbox - Video Tutorial"
+          }
+        ]
+      }
+    },
+    "conclusion": {
+      "summary": "Flexbox simplifies CSS layout by providing flexible alignment, making it a go-to choice for modern web development.",
+      "callToAction": "Try incorporating Flexbox into your next project to see its power in action!"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Blog post 3",
+    "slug": "blog-post-3",
+    "description": "Learn how Flexbox works in CSS.",
+    "category": "css",
+    "tags": ["CSS", "Flexbox"],
+    "publishDate": "2024-12-05",
+    "lastUpdateDate": "2024-12-15",
+    "popularity": 60,
+    "codeImage": {
+      "html": "<div class='flex-container'><div>1</div><div>2</div><div>3</div></div>",
+      "css": ".flex-container { display: flex; gap: 10px; }",
+      "svg": null,
+      "javascript": null
+    },
+    "content": {
+      "headings": [
+        "Introduction to Flexbox",
+        "Why Use Flexbox?",
+        "Practical Examples"
+      ],
+      "subheadings": ["Basic Syntax", "Flexbox Properties", "Common Use Cases"],
+      "paragraphs": [
+        {
+          "name": "introduction",
+          "text": "Flexbox, short for the Flexible Box Module, is a CSS layout model designed to arrange elements in a predictable and flexible manner, even when the size of the elements is unknown."
+        },
+        {
+          "name": "flex-direction",
+          "text": "One of the primary properties in Flexbox is `flex-direction`, which determines the direction of the main axis. Options include row, column, row-reverse, and column-reverse."
+        },
+        {
+          "name": "practical-use",
+          "text": "Flexbox is particularly useful for creating responsive navigation bars, centering elements, and aligning items dynamically without using floats or positioning hacks."
+        }
+      ],
+      "lists": {
+        "ordered": [
+          "Flex Direction",
+          "Justify Content",
+          "Align Items",
+          "Align Self"
+        ],
+        "unordered": [
+          "Cross-Browser Support",
+          "Versatile Layouts",
+          "Reduced Complexity"
+        ]
+      },
+      "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],
+      "codeSnippets": [
+        {
+          "language": "css",
+          "snippet": ".flex-container { display: flex; justify-content: center; align-items: center; }"
+        }
+      ],
+      "media": {
+        "images": [
+          {
+            "url": "https://example.com/flexbox-diagram.png",
+            "alt": "Diagram illustrating Flexbox layout properties"
+          }
+        ],
+        "videos": [
+          {
+            "url": "https://example.com/flexbox-tutorial.mp4",
+            "caption": "Introduction to Flexbox - Video Tutorial"
+          }
+        ]
+      }
+    },
+    "conclusion": {
+      "summary": "Flexbox simplifies CSS layout by providing flexible alignment, making it a go-to choice for modern web development.",
+      "callToAction": "Try incorporating Flexbox into your next project to see its power in action!"
+    }
+  }
+]

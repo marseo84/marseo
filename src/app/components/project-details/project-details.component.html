@@ -1,0 +1,93 @@
+<!-- <div class="container px-4 sm:px-2 lg:px-4"> -->
+<div>
+  <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <!-- search/filter column -->
+    <div class="col-span-1 lg:sticky lg:top-0 self-start">
+      <div class="p-4 bg-gray-100 rounded shadow">
+        <!-- Add filter/search content here -->
+        <p class="text-sm font-semibold">Filters/Search</p>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="col-span-1">
+      <div class="project-details" *ngIf="project">
+        <!-- Title and Description -->
+        <h1 class="text-4xl font-bold">{{ project.title }}</h1>
+        <p class="mt-2 text-lg">{{ project.description }}</p>
+
+        <!-- Tags -->
+        <div class="tags mt-4">
+          <span
+            *ngFor="let tag of project.tags"
+            class="tag bg-gray-200 text-gray-800 p-1 rounded mr-2"
+          >
+            {{ tag }}
+          </span>
+        </div>
+        <!-- Links -->
+        <div class="links mt-8">
+          <a
+            *ngIf="project.github"
+            [href]="project.github"
+            target="_blank"
+            class="link bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            View on GitHub
+          </a>
+          <a
+            *ngIf="project.liveDemo"
+            [href]="project.liveDemo"
+            target="_blank"
+            class="link bg-green-500 text-white px-4 py-2 rounded ml-4"
+          >
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-2">
+      <!-- Media Carousel -->
+      <div class="media-gallery mt-6">
+        <app-swiper-slider
+          [images]="project.details?.media"
+          [swiperOptions]="{
+              slidesPerView: 3,
+              spaceBetween: 20,
+              loop: true,
+              autoplay: { delay: 4000 },
+              pagination: {
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            }"
+        >
+        </app-swiper-slider>
+
+        <!-- <swiper [slidesPerView]="3" [spaceBetween]="50" [loop]="true">
+            <ng-container *ngFor="let image of project.details.media">
+              <swiper-slide>
+                <img
+                  [src]="image"
+                  alt="{{ project.title }}"
+                  class="rounded-lg"
+                />
+              </swiper-slide>
+            </ng-container>
+          </swiper> -->
+      </div>
+
+      <!-- Code Preview -->
+      <div class="code-preview mt-6" *ngIf="project?.codeSnippets?.length > 0">
+        <h2 class="text-2xl font-semibold">Code Snippets</h2>
+        <app-code-snippets
+          [codeSnippets]="project.codeSnippets"
+        ></app-code-snippets>
+      </div>
+    </div>
+  </section>
+</div>

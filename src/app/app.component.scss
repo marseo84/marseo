@@ -1,0 +1,14 @@
+@import "../styles/variables";
+
+// GLOBAL - START
+
+.app-container {
+  width: 100dvw;
+  min-height: 100vh;
+  padding: 0.5em;
+  // @apply bg-primary_bg text-white p-4;
+  background-color: $bg-5;
+  color: $text-2;
+}
+
+// GLOBAL - END

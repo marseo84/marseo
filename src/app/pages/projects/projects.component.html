@@ -1,0 +1,29 @@
+<div class="container-projects px-4 sm:px-6 lg:px-8">
+  <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <!-- search/filter column -->
+    <div class="col-span-1 lg:sticky lg:top-0 self-start">
+      <div class="p-4 bg-gray-100 rounded shadow">
+        <!-- Add filter/search content here -->
+        <p class="text-sm font-semibold">Filters/Search</p>
+      </div>
+    </div>
+
+    <!-- card columns -->
+    <div
+      class="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      <!-- <div class="projects"> -->
+      <app-card
+        *ngFor="let project of projects"
+        [id]="project.id"
+        [codeImage]="project.codeImage"
+        [tags]="project.tags"
+        [title]="project.title"
+        [description]="project.description"
+        [slug]="project.slug"
+        [type]="'project'"
+      >
+      </app-card>
+    </div>
+  </section>
+</div>

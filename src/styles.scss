@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Import Tailwind's directives into your SCSS file
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./styles/variables";
+// @import "swiper/swiper-bundle.min.css";
+
+// RESET - START
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// RESET - END
+
+// .active {
+//   font-weight: bold;
+//   color: #007bff;
+// }
+
+// TEXT STYLES - START
+// .writing-mode-vertical {
+//   writing-mode: vertical-rl;
+//   text-orientation: mixed;
+// }
+
+.section-heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  @media (min-width: $breakpoint) {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  // writing-mode: vertical-rl;
+  // text-orientation: mixed;
+  // padding-bottom: 5em;
+}
+
+// TEXT STYLES - END
+
+// LAYOUT GLOBAL - START
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  padding: 1em;
+}
+
+.section-intro {
+  margin-bottom: 43vh;
+  @media (min-width: $breakpoint) {
+    margin-bottom: 43vh;
+  }
+}
+
+.section-grid {
+  padding: 2rem 1rem;
+  scroll-padding-top: 55rem; /* Adjust for sticky headings */
+}
+
+.sticky {
+  position: sticky;
+}
+
+// LAYOUT GLOBAL - END
+
+// SECTION INTRO - START
+
+// SECTION INTRO - END
+
+// UI ELEMENTS - START
+
+.see-more-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  @media (min-width: $breakpoint) {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+.see-more-btn:hover {
+  color: orangered;
+}
+
+.see-more-btn .arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #333;
+  border-top: 2px solid #333;
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover .arrow {
+  border-color: orangered;
+  transform: rotate(45deg) translateX(2px);
+}
+
+// UI ELEMENTS - END
