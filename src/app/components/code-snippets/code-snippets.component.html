@@ -1,134 +1,26 @@
-<div class="code-snippets">
-  <div class="tabs">
-    <button
-      *ngFor="let snippet of codeSnippets; let i = index"
-      class="tab"
-      [class.active]="i === activeSnippetIndex"
-      (click)="selectSnippet(i)"
-    >
-      {{ snippet.heading }}
-    </button>
-  </div>
-
-  <!-- code snippet section -->
-  <div class="tab-content">
-    <h3 class="snippet-heading">
-      {{ codeSnippets[activeSnippetIndex]?.heading }}
-    </h3>
-    <p class="snippet-description">
-      {{ codeSnippets[activeSnippetIndex]?.description }}
-    </p>
-  </div>
-
-  <!-- snippets -->
-  <!-- result here -->
-
-  <!-- rendered result toggle -->
-  <button class="result-toggle" (click)="toggleResultView()">
-    {{ showResult ? "Show Code" : "Show Result" }}
-  </button>
-
-  <div class="language-result-toggle-wrapper">
-    <button
-      *ngFor="
-        let language of codeSnippets[activeSnippetIndex]?.languages;
-        let j = index
-      "
-      class="language-toggle"
-      [class.active]="j === activeLanguageIndex"
-      (click)="toggleLanguage(j)"
-    >
-      {{ language.language.toUpperCase() }}
-    </button>
-  </div>
-
-  <!-- <div class="snippets-wrapper">
-    <ng-template
-      *ngFor="
-        let langauge of codeSnippets[activeSnippetIndex]?.languages;
-        let j = index
-      "
-    >
-    </ng-template>
-  </div> -->
-
-  <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-    <div class="col-span-1">
-      <div class="snippet-code" *ngIf="!showResult">
+<div class="code-snippets p-6">
+  <div
+    class="code-snippet-wrapper p-6 border-2 rounded"
+    [id]="'snippet-' + i"
+    *ngFor="let snippet of codeSnippets; let i = index"
+  >
+    <h3 class="snippet-heading">{{ snippet.heading }}</h3>
+    <p class="snippet-description">{{ snippet.description }}</p>
+    <div class="snippet-result" *ngIf="snippet.resultImage">
+      <img [src]="snippet.resultImage" [alt]="snippet.heading" />
+    </div>
+    <div class="code-block-wrapper">
+      <div class="language-section" *ngFor="let language of snippet.languages">
+        <h4>{{ language.language.toUpperCase() }}</h4>
         <pre>
-        <code 
-        [class]="'language-' + currentLanguage.language"
-        [innerText]="codeSnippets[activeSnippetIndex]?.languages[0]?.code">
-  
+        <code
+        [class]="'language-' + language.language"
+        [innerText]="language.code"
+        >
         </code>
       </pre>
       </div>
     </div>
-    <div class="col-span-1">
-      <div class="snippet-code" *ngIf="!showResult">
-        <pre>
-        <code 
-        [class]="'language-' + currentLanguage.language"
-        [innerText]="codeSnippets[activeSnippetIndex]?.languages[0]?.code">
-  
-        </code>
-      </pre>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="snippet-wrapper">
-    <div class="column">
-      <label for="language1">Select Language (Left Column):</label>
-      <select
-        id="language1"
-        [(ngModel)]="leftColumnLanguage"
-        (change)="updateCodeView(0, leftColumnLanguage)"
-      >
-        <option *ngFor="let lang of availableLanguages" [value]="lang">
-          {{ lang.toUpperCase() }}
-        </option>
-      </select>
-
-      <pre><code [class]="'language-' + leftColumnLanguage" #leftCode>{{ leftCodeContent }}</code></pre>
-    </div>
-
-    <div class="column">
-      <label for="language2">Select Language (Right Column):</label>
-      <select
-        id="language2"
-        [(ngModel)]="rightColumnLanguage"
-        (change)="updateCodeView(1, rightColumnLanguage)"
-      >
-        <option *ngFor="let lang of availableLanguages" [value]="lang">
-          {{ lang.toUpperCase() }}
-        </option>
-      </select>
-
-      <pre><code [class]="'language-' + rightColumnLanguage" #rightCode>{{ rightCodeContent }}</code></pre>
-    </div>
+    <p class="snippet-notes italic">{{ snippet?.notes }}</p>
   </div>
-
-  <!-- code display -->
-  <!-- <div class="snippet-code-wrapper">
-    <div class="snippet-code" *ngIf="!showResult">
-      <pre>
-      <code 
-      [class]="'language-' + currentLanguage.language"
-      [innerText]="codeSnippets[activeSnippetIndex]?.languages[0]?.code">
-
-      </code>
-    </pre>
-    </div>
-  </div> -->
-
-  <!-- result display -->
-  <div class="result" *ngIf="showResult">
-    <img *ngIf="currentLanguage.name === 'html'" [src]="" [alt]="" />
-    <!-- add more logic for different types of results -->
-  </div>
-
-  <p class="snippet-notes">
-    Notes: {{ codeSnippets[activeSnippetIndex]?.notes }}
-  </p>
 </div>

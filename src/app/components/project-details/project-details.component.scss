@@ -1,4 +1,8 @@
 .project-details {
+  section {
+    overflow: visible;
+  }
+
   .tags {
     .tag {
       display: inline-block;
@@ -9,6 +13,43 @@
     .link {
       text-decoration: none;
       font-weight: bold;
+    }
+  }
+
+  .scroll-btn {
+    background-color: #1f2937; /* Gray-800 */
+    color: #ffffff; /* White */
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem; /* Rounded */
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #374151; /* Slightly lighter gray */
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid #3b82f6; /* Blue focus ring */
+    }
+  }
+
+  .tab {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+
+    &.active {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    &:hover {
+      background-color: #0056b3;
+      color: #fff;
     }
   }
 }

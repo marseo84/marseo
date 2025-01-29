@@ -10,6 +10,7 @@ export const routes: Routes = [
       hero: {
         title: 'marseo',
         subtitle: 'full stack web developer',
+        heroText: '',
         styleClass: 'hero-graphic-home',
       },
       cta: {
@@ -29,8 +30,9 @@ export const routes: Routes = [
       import('./pages/about/about.component').then((m) => m.AboutComponent),
     data: {
       hero: {
-        title: 'About Me',
+        title: 'about me',
         subtitle: 'Hey there,',
+        heroText: 'I am Marcel',
         styleClass: 'hero-graphic-about',
       },
       cta: {
@@ -54,6 +56,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-projects',
       },
     },
@@ -68,6 +71,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-project-details',
       },
     },
@@ -82,6 +86,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-contact',
       },
     },
@@ -96,6 +101,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-codegnettes',
       },
     },
@@ -110,6 +116,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-blog-home',
       },
     },
@@ -124,6 +131,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-blog-categories',
       },
     },
@@ -138,6 +146,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: 'hero-graphic-blog-post',
       },
     },
@@ -149,6 +158,7 @@ export const routes: Routes = [
       hero: {
         title: '',
         subtitle: '',
+        heroText: '',
         styleClass: '',
       },
     },

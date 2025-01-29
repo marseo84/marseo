@@ -1,1 +1,14 @@
-<p>about works!</p>
+<div class="container page-wrapper">
+  <app-hero
+    *ngIf="heroData"
+    [title]="heroData.title"
+    [subtitle]="heroData.subtitle"
+    [styleClass]="heroData.styleClass"
+  ></app-hero>
+  <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <div class="col-span-1">column</div>
+    <div class="col-span-1">column</div>
+    <div class="col-span-1">column</div>
+    <div class="col-span-1">column</div>
+  </section>
+</div>

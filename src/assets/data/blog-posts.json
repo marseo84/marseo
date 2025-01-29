@@ -38,15 +38,25 @@
       ],
       "lists": {
         "ordered": [
-          "Flex Direction",
-          "Justify Content",
-          "Align Items",
-          "Align Self"
+          {
+            "title": "ordered title",
+            "items": [
+              "Flex Direction",
+              "Justify Content",
+              "Align Items",
+              "Align Self"
+            ]
+          }
         ],
         "unordered": [
-          "Cross-Browser Support",
-          "Versatile Layouts",
-          "Reduced Complexity"
+          {
+            "title": "unordered title",
+            "items": [
+              "Cross-Browser Support",
+              "Versatile Layouts",
+              "Reduced Complexity"
+            ]
+          }
         ]
       },
       "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],
@@ -119,15 +129,25 @@
       ],
       "lists": {
         "ordered": [
-          "Flex Direction",
-          "Justify Content",
-          "Align Items",
-          "Align Self"
+          {
+            "title": "ordered title",
+            "items": [
+              "Flex Direction",
+              "Justify Content",
+              "Align Items",
+              "Align Self"
+            ]
+          }
         ],
         "unordered": [
-          "Cross-Browser Support",
-          "Versatile Layouts",
-          "Reduced Complexity"
+          {
+            "title": "unordered title",
+            "items": [
+              "Cross-Browser Support",
+              "Versatile Layouts",
+              "Reduced Complexity"
+            ]
+          }
         ]
       },
       "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],
@@ -196,15 +216,25 @@
       ],
       "lists": {
         "ordered": [
-          "Flex Direction",
-          "Justify Content",
-          "Align Items",
-          "Align Self"
+          {
+            "title": "ordered title",
+            "items": [
+              "Flex Direction",
+              "Justify Content",
+              "Align Items",
+              "Align Self"
+            ]
+          }
         ],
         "unordered": [
-          "Cross-Browser Support",
-          "Versatile Layouts",
-          "Reduced Complexity"
+          {
+            "title": "unordered title",
+            "items": [
+              "Cross-Browser Support",
+              "Versatile Layouts",
+              "Reduced Complexity"
+            ]
+          }
         ]
       },
       "quotes": ["'Flexbox is a game-changer for CSS layout.' - Developer A"],

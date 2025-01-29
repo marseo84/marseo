@@ -23,16 +23,24 @@ import 'prismjs/components/prism-scss';
   standalone: true,
 })
 export class CodeSnippetsComponent implements AfterViewInit, OnChanges {
-  @Input() codeSnippets: any[] = [];
-  activeSnippetIndex = 0;
-  activeLanguageIndex = 0;
-  showResult = false;
+  @Input() codeSnippets: {
+    heading: string;
+    description: string;
+    resultImage?: string;
+    languages: { language: string; code: string }[];
+    notes?: string;
+  }[] = [];
 
-  get currentLanguage() {
-    return this.codeSnippets[this.activeSnippetIndex]?.languages[
-      this.activeLanguageIndex
-    ];
-  }
+  // @Input() activeSnippetIndex = 0;
+  // @Input() selectSnippet!: (index: number) => void;
+  // showResult = false;
+  // activeLanguageIndex = 0;
+
+  // get currentLanguage() {
+  //   return this.codeSnippets[this.activeSnippetIndex]?.languages[
+  //     this.activeLanguageIndex
+  //   ];
+  // }
 
   ngAfterViewInit(): void {
     this.highlightCode();
@@ -44,23 +52,23 @@ export class CodeSnippetsComponent implements AfterViewInit, OnChanges {
     }
   }
 
-  selectSnippet(index: number): void {
-    this.activeSnippetIndex = index;
-    this.activeLanguageIndex = 0;
-    this.showResult = false;
-    setTimeout(() => {
-      this.highlightCode();
-    });
-  }
+  // selectSnippet(index: number): void {
+  //   this.activeSnippetIndex = index;
+  //   this.activeLanguageIndex = 0;
+  //   this.showResult = false;
+  //   setTimeout(() => {
+  //     this.highlightCode();
+  //   });
+  // }
 
-  toggleLanguage(index: number): void {
-    this.activeLanguageIndex = index;
-    this.highlightCode();
-  }
+  // toggleLanguage(index: number): void {
+  //   this.activeLanguageIndex = index;
+  //   this.highlightCode();
+  // }
 
-  toggleResultView(): void {
-    this.showResult = !this.showResult;
-  }
+  // toggleResultView(): void {
+  //   this.showResult = !this.showResult;
+  // }
 
   private highlightCode(): void {
     Prism.highlightAll();

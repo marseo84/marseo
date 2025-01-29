@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProjectsService } from '../../shared/services/projects.service';
 import { BlogPostsService } from '../../shared/services/blog-posts.service';
 import { CodegnettesService } from '../../shared/services/codegnettes.service';
 import { CardComponent } from '../../components/card/card.component';
-import { CommonModule } from '@angular/common';
+import { HeroComponent } from '../../components/hero/hero.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent, CommonModule, RouterModule],
+  imports: [CardComponent, HeroComponent, CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true,

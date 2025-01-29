@@ -7,7 +7,7 @@
     "tags": ["Frontend", "Angular", "Bootstrap", "CSS"],
     "featured": true,
     "publishDate": "2024-11-01",
-    "lastUpdateDate": "2024-12-10",
+    "lastUpdateDate": "2024-11-01",
     "popularity": 90,
     "languages": ["html", "css", "javascript"],
     "codeImage": [
@@ -28,7 +28,7 @@
       {
         "heading": "Hero Section",
         "description": "HTML, CSS, and JavaScript code for the hero section, featuring a full-screen background image.",
-        "imageUrl": "images/tvuj-vycepni-hero-code.png",
+        "imageUrl": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
         "caption": "Code snippet for the hero section with a full-screen background.",
         "languages": [
           {
@@ -70,238 +70,148 @@
     ],
     "github": "https://github.com/user/tvuj-vycepni",
     "liveDemo": "https://tvuj-vycepni.com",
-    "content": {
-      "headings": ["Introduction", "Key Features", "Gallery"],
-      "paragraphs": [
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Introduction",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Designed and implemented a front-end website for 'Tvuj Vycepni', emphasizing beer culture and an intuitive user experience.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "textContent": "Project Overview",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This project involved creating a modern and visually appealing website for a beer catering and sanitation business.  The goal was to showcase their services and make it easy for potential clients to get in touch.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This project involved creating a modern and visually appealing website for a beer catering and sanitation business.  The goal was to showcase their services and make it easy for potential clients to get in touch.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Key Features",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "textContent": "Design & Technology",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "The website boasts a clean and modern aesthetic, leveraging Bootstrap for a responsive and consistent layout across devices.  Angular was used for dynamic content rendering and enhanced user interaction.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "list",
+        "listType": "ordered",
+        "textContent": [
+          "Modern and responsive design",
+          "Intuitive navigation",
+          "Showcase of services (catering and sanitation)",
+          "Contact form and information",
+          "Integration with social media (if applicable)"
+        ],
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "textContent": "Technical Details",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Key technologies used include HTML, CSS, JavaScript, Bootstrap, and Angular.  The project utilizes a component-based architecture for maintainability and scalability.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "list",
+        "listType": "unordered",
+        "textContent": [
+          "Angular Components for dynamic content",
+          "Bootstrap for responsive layout",
+          "Flexbox for modern layout techniques"
+        ],
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
+        "alt": "Tvuj Vycepni website hero image",
+        "caption": "Hero section showcasing beer catering.",
+        "aria-label": "text description aria label",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "image",
+        "src": "another-image-url.jpg",
+        "alt": "Tvuj Vycepni website services",
+        "caption": "Showcasing the sanitation services.",
+        "aria-label": "text description aria label",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Conclusion",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Tvuj Vycepni provides a user-friendly and informative online presence, effectively promoting their beer catering and sanitation services. The modern design and robust technology choices ensure a positive user experience.",
+        "date": "2025-01-29",
+        "status": "published"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Explore the website and experience its features live!",
+        "date": "2025-01-29",
+        "status": "published"
+      }
+    ],
+
+    "media": {
+      "images": [
         {
-          "name": "overview",
-          "text": "Designed and implemented a front-end website for 'Tvuj Vycepni,' emphasizing beer culture and an intuitive user experience."
+          "url": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
+          "alt": "Hero section of Tvuj Vycepni website.",
+          "caption": "Hero section of Tvuj Vycepni website."
         },
         {
-          "name": "features",
-          "text": "Responsive design, Bootstrap integration, and optimized performance for seamless browsing."
+          "url": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
+          "alt": "Slider section displaying featured services.",
+          "caption": "Slider section displaying featured services."
         }
-      ],
-      "media": {
-        "images": [
-          {
-            "url": "images/tvuj-vycepni-hero.png",
-            "alt": "Hero section of Tvuj Vycepni website.",
-            "caption": "Hero section of Tvuj Vycepni website."
-          },
-          {
-            "url": "images/tvuj-vycepni-slider.png",
-            "alt": "Slider section displaying featured services.",
-            "caption": "Slider section displaying featured services."
-          }
-        ]
-      }
-    },
-    "conclusion": {
-      "summary": "Tvuj Vycepni stands out as a prime example of modern web design tailored to small businesses.",
-      "callToAction": "Explore the website and experience its features live!"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Tvuj Vycepni 2",
-    "slug": "tvuj-vycepni",
-    "description": "A modern and visually appealing front-end website for a beer catering and sanitation business.",
-    "tags": ["Frontend", "Angular", "Bootstrap", "CSS"],
-    "featured": true,
-    "publishDate": "2024-11-01",
-    "lastUpdateDate": "2024-12-10",
-    "popularity": 90,
-    "languages": ["html", "css", "javascript"],
-    "codeImage": [
-      {
-        "language": "html",
-        "code": "<div class='hero'></div>"
-      },
-      {
-        "language": "css",
-        "code": ".hero { background-image: url('images/hero-beer.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; }"
-      },
-      {
-        "language": "javascript",
-        "code": "console.log('Tvuj Vycepni website initialized');"
-      }
-    ],
-    "codeSnippets": [
-      {
-        "heading": "Hero Section",
-        "description": "HTML, CSS, and JavaScript code for the hero section, featuring a full-screen background image.",
-        "imageUrl": "images/tvuj-vycepni-hero-code.png",
-        "caption": "Code snippet for the hero section with a full-screen background.",
-        "languages": [
-          {
-            "language": "html",
-            "code": "<div class='hero'></div>"
-          },
-          {
-            "language": "css",
-            "code": ".hero { background-image: url('images/hero-beer.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; }"
-          },
-          {
-            "language": "javascript",
-            "code": "console.log('Hero section initialized');"
-          }
-        ],
-        "notes": "Ensure the background image URL is correct and the script is linked properly."
-      },
-      {
-        "heading": "Responsive Navigation",
-        "description": "Code for a responsive navigation bar using Bootstrap.",
-        "imageUrl": "images/tvuj-vycepni-navbar-code.png",
-        "caption": "Snippet showcasing the responsive navigation bar.",
-        "languages": [
-          {
-            "language": "html",
-            "code": "<nav class='navbar navbar-expand-lg navbar-light bg-light'>...</nav>"
-          },
-          {
-            "language": "css",
-            "code": ".navbar { margin-bottom: 20px; }"
-          },
-          {
-            "language": "javascript",
-            "code": "document.querySelector('.navbar-toggler').addEventListener('click', toggleNavbar);"
-          }
-        ],
-        "notes": "Add appropriate aria-labels for accessibility."
-      }
-    ],
-    "github": "https://github.com/user/tvuj-vycepni",
-    "liveDemo": "https://tvuj-vycepni.com",
-    "content": {
-      "headings": ["Introduction", "Key Features", "Gallery"],
-      "paragraphs": [
-        {
-          "name": "overview",
-          "text": "Designed and implemented a front-end website for 'Tvuj Vycepni,' emphasizing beer culture and an intuitive user experience."
-        },
-        {
-          "name": "features",
-          "text": "Responsive design, Bootstrap integration, and optimized performance for seamless browsing."
-        }
-      ],
-      "media": {
-        "images": [
-          {
-            "url": "images/tvuj-vycepni-hero.png",
-            "alt": "Hero section of Tvuj Vycepni website.",
-            "caption": "Hero section of Tvuj Vycepni website."
-          },
-          {
-            "url": "images/tvuj-vycepni-slider.png",
-            "alt": "Slider section displaying featured services.",
-            "caption": "Slider section displaying featured services."
-          }
-        ]
-      }
-    },
-    "conclusion": {
-      "summary": "Tvuj Vycepni stands out as a prime example of modern web design tailored to small businesses.",
-      "callToAction": "Explore the website and experience its features live!"
-    }
-  },
-  {
-    "id": 3,
-    "title": "Tvuj Vycepni 3",
-    "slug": "tvuj-vycepni",
-    "description": "A modern and visually appealing front-end website for a beer catering and sanitation business.",
-    "tags": ["Frontend", "Angular", "Bootstrap", "CSS"],
-    "featured": true,
-    "publishDate": "2024-11-01",
-    "lastUpdateDate": "2024-12-10",
-    "popularity": 90,
-    "languages": ["html", "css", "javascript"],
-    "codeImage": [
-      {
-        "language": "html",
-        "code": "<div class='hero'></div>"
-      },
-      {
-        "language": "css",
-        "code": ".hero { background-image: url('images/hero-beer.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; }"
-      },
-      {
-        "language": "javascript",
-        "code": "console.log('Tvuj Vycepni website initialized');"
-      }
-    ],
-    "codeSnippets": [
-      {
-        "heading": "Hero Section",
-        "description": "HTML, CSS, and JavaScript code for the hero section, featuring a full-screen background image.",
-        "imageUrl": "images/tvuj-vycepni-hero-code.png",
-        "caption": "Code snippet for the hero section with a full-screen background.",
-        "languages": [
-          {
-            "language": "html",
-            "code": "<div class='hero'></div>"
-          },
-          {
-            "language": "css",
-            "code": ".hero { background-image: url('images/hero-beer.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; }"
-          },
-          {
-            "language": "javascript",
-            "code": "console.log('Hero section initialized');"
-          }
-        ],
-        "notes": "Ensure the background image URL is correct and the script is linked properly."
-      },
-      {
-        "heading": "Responsive Navigation",
-        "description": "Code for a responsive navigation bar using Bootstrap.",
-        "imageUrl": "images/tvuj-vycepni-navbar-code.png",
-        "caption": "Snippet showcasing the responsive navigation bar.",
-        "languages": [
-          {
-            "language": "html",
-            "code": "<nav class='navbar navbar-expand-lg navbar-light bg-light'>...</nav>"
-          },
-          {
-            "language": "css",
-            "code": ".navbar { margin-bottom: 20px; }"
-          },
-          {
-            "language": "javascript",
-            "code": "document.querySelector('.navbar-toggler').addEventListener('click', toggleNavbar);"
-          }
-        ],
-        "notes": "Add appropriate aria-labels for accessibility."
-      }
-    ],
-    "github": "https://github.com/user/tvuj-vycepni",
-    "liveDemo": "https://tvuj-vycepni.com",
-    "content": {
-      "headings": ["Introduction", "Key Features", "Gallery"],
-      "paragraphs": [
-        {
-          "name": "overview",
-          "text": "Designed and implemented a front-end website for 'Tvuj Vycepni,' emphasizing beer culture and an intuitive user experience."
-        },
-        {
-          "name": "features",
-          "text": "Responsive design, Bootstrap integration, and optimized performance for seamless browsing."
-        }
-      ],
-      "media": {
-        "images": [
-          {
-            "url": "images/tvuj-vycepni-hero.png",
-            "alt": "Hero section of Tvuj Vycepni website.",
-            "caption": "Hero section of Tvuj Vycepni website."
-          },
-          {
-            "url": "images/tvuj-vycepni-slider.png",
-            "alt": "Slider section displaying featured services.",
-            "caption": "Slider section displaying featured services."
-          }
-        ]
-      }
+      ]
     },
     "conclusion": {
       "summary": "Tvuj Vycepni stands out as a prime example of modern web design tailored to small businesses.",

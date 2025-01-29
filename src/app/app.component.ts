@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeroComponent } from './components/hero/hero.component';
+// import { HeroComponent } from './components/hero/hero.component';
 import { CtaComponent } from './components/cta/cta.component';
 import { HeroData, CtaData } from './models/components.interface';
 
@@ -33,7 +33,7 @@ register();
   imports: [
     RouterOutlet,
     NavbarComponent,
-    HeroComponent,
+    // HeroComponent,
     CtaComponent,
     FooterComponent,
     CommonModule,
