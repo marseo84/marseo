@@ -1,19 +1,40 @@
+<!-- class="section-cta grid grid-cols-2 gap-4 items-start" -->
+
 <section
   class="section-cta grid grid-cols-4 gap-4 items-start"
   [ngClass]="styleClass"
 >
   <div class="col-span-1 self-start">
-    <p class="cta-tagline text-9xl">{{ ctaTaglinePrimary }}</p>
+    <p class="cta-tagline text-7xl md:text-9xl mb-10">
+      {{ ctaTaglinePrimary }}
+    </p>
   </div>
-  <div class="col-span-1"></div>
-  <div class="col-span-2 self-start">
+  <div class="col-span-1 self-start"></div>
+  <div class="col-span-1 self-start"></div>
+  <div class="col-span-1 self-start"></div>
+
+  <div class="col-span-4 md:col-span-1">
     <a
       [routerLink]="ctaBtnPrimaryLink"
-      class="cta-btn cta-btn-primary px-4 py-10 rounded-md bg-primary text-white hover:bg-primary-dark transition"
+      class="cta-btn cta-btn-primary pushable"
     >
-      {{ ctaBtnPrimary }}
+      <span class="shadow"></span>
+      <span class="edge-red"></span>
+      <span class="front-red text-center">{{ ctaBtnPrimary }}</span>
     </a>
   </div>
+
+  <div class="col-span-1 self-start">
+    <!-- <a
+      [routerLink]="ctaBtnPrimaryLink"
+      class="cta-btn cta-btn-primary pushable"
+    >
+      <span class="shadow"></span>
+      <span class="edge"></span>
+      <span class="front text-center">{{ ctaBtnPrimary }}</span>
+    </a> -->
+  </div>
+  <div class="col-span-1"></div>
   <div
     *ngIf="ctaTaglineSecondary || ctaBtnSecondary"
     class="col-span-2 self-end"
@@ -24,7 +45,7 @@
     <a
       *ngIf="ctaBtnSecondary"
       [routerLink]="ctaBtnSecondaryLink"
-      class="cta-btn cta-btn-secondary text-4xl px-4 py-2 rounded-md bg-secondary text-white hover:bg-secondary-dark transition"
+      class="cta-btn cta-btn-secondary"
     >
       {{ ctaBtnSecondary }}
     </a>
