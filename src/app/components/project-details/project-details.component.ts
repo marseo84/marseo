@@ -1,6 +1,6 @@
 import {
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
+  // CUSTOM_ELEMENTS_SCHEMA,
   OnInit,
   Input,
 } from '@angular/core';
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { SwiperSliderComponent } from '../swiper-slider/swiper-slider.component';
 import { CodeSnippetsComponent } from '../code-snippets/code-snippets.component';
 import { DatePipe } from '@angular/common';
+import { ScrollService } from '../../shared/services/scroll.service';
 
 @Component({
   selector: 'app-project-details',
@@ -35,7 +36,8 @@ export class ProjectDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    private scrollService: ScrollService
   ) {}
 
   ngOnInit(): void {
@@ -88,22 +90,8 @@ export class ProjectDetailsComponent implements OnInit {
     //     });
   }
 
-  scrollToSection(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 64;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - offset;
-      // element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    } else {
-      console.warn(`Section with ID '${sectionId}' not found.`);
-    }
+  scrollTo(sectionId: string): void {
+    this.scrollService.scrollToSection(sectionId);
   }
 }
 // }

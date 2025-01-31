@@ -40,7 +40,7 @@
       </div>
 
       <!-- dates -->
-      <div class="dates flex gap-2 mt-4 border-b border-gray-400">
+      <div class="dates flex flex-column gap-2 mt-4 border-b border-gray-400">
         <div class="date date-publish">
           <span>published: </span>
           <span>{{ project?.publishDate | date }}</span>
@@ -55,13 +55,12 @@
       </div>
 
       <!-- scroll buttons -->
-      <!-- <div class="scroll-buttons flex mt-4 gap-2 flex-wrap"> -->
       <div
         class="scroll-buttons flex mt-4 gap-2 flex-wrap sticky top-0 sm:left-0 sm:w-full sm:shadow-md"
       >
         <button
           class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded"
-          (click)="scrollToSection('media-carousel')"
+          (click)="scrollTo('media-carousel')"
         >
           About Project
         </button>
@@ -70,7 +69,7 @@
         <button
           *ngFor="let snippet of project.codeSnippets; let i = index"
           class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          (click)="scrollToSection('snippet-' + i)"
+          (click)="scrollTo('snippet-' + i)"
         >
           {{ snippet.heading }}
         </button>

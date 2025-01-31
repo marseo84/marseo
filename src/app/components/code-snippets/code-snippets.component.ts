@@ -6,7 +6,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-
+import { CodeSnippet } from '../../models/components.interface';
 import * as Prism from 'prismjs';
 
 // prism languages
@@ -23,24 +23,7 @@ import 'prismjs/components/prism-scss';
   standalone: true,
 })
 export class CodeSnippetsComponent implements AfterViewInit, OnChanges {
-  @Input() codeSnippets: {
-    heading: string;
-    description: string;
-    resultImage?: string;
-    languages: { language: string; code: string }[];
-    notes?: string;
-  }[] = [];
-
-  // @Input() activeSnippetIndex = 0;
-  // @Input() selectSnippet!: (index: number) => void;
-  // showResult = false;
-  // activeLanguageIndex = 0;
-
-  // get currentLanguage() {
-  //   return this.codeSnippets[this.activeSnippetIndex]?.languages[
-  //     this.activeLanguageIndex
-  //   ];
-  // }
+  @Input() codeSnippets: CodeSnippet[] = [];
 
   ngAfterViewInit(): void {
     this.highlightCode();

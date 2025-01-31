@@ -99,7 +99,9 @@ export class BlogHomeComponent implements OnInit {
     switch (this.sortBy) {
       case 'date':
         this.filteredBlogPosts.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) =>
+            new Date(b.publishDate).getTime() -
+            new Date(a.publishDate).getTime()
         );
         break;
       case 'title':

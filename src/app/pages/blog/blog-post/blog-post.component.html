@@ -1,15 +1,171 @@
-<div class="container px-4 sm:px-6 lg:px-8">
+<div class="container page-wrapper">
   <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-    <!-- search/filter column -->
-    <div class="col-span-1 lg:sticky lg:top-0 self-start">
-      <div class="p-4 bg-gray-100 rounded shadow">
-        <!-- Add filter/search content here -->
-        <p class="text-sm font-semibold">Filters/Search</p>
+    <!-- content header & outline - column 1  -->
+    <div class="col-span-1 lg:sticky lg:top-20 self-start">
+      <!-- content header & outline - column 1  -->
+      <div class="project-details" *ngIf="post">
+        <!-- Title and Description -->
+        <h1 class="text-4xl font-bold">{{ post.title }}</h1>
+        <p class="mt-2 text-lg">{{ post.description }}</p>
+
+        <!-- Tags -->
+        <div class="tags mt-4 flex flex-wrap gap-2">
+          <span
+            *ngFor="let tag of post.tags"
+            class="tag bg-gray-300 text-gray-800 p-1 rounded"
+          >
+            {{ tag }}
+          </span>
+        </div>
+
+        <!-- Links -->
+        <div class="links mt-8 flex flex-wrap gap-2">
+          <a
+            *ngIf="post.github"
+            [href]="post.github"
+            target="_blank"
+            class="link bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            View on GitHub
+          </a>
+          <a
+            *ngIf="post.liveDemo"
+            [href]="post.liveDemo"
+            target="_blank"
+            class="link bg-green-500 text-white px-4 py-2 rounded ml-4"
+          >
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- dates -->
+      <div class="dates flex flex-column gap-2 mt-4 border-b border-gray-400">
+        <div class="date date-publish">
+          <span>published: </span>
+          <span>{{ post?.publishDate | date }}</span>
+        </div>
+        <div
+          class="date date-last-update"
+          *ngIf="post?.lastUpdateDate != post?.publishDate"
+        >
+          <span>/ updated: </span>
+          <span>{{ post?.lastUpdateDate | date }}</span>
+        </div>
+      </div>
+
+      <!-- scroll buttons -->
+      <div
+        class="scroll-buttons flex mt-4 gap-2 flex-wrap sticky top-0 sm:left-0 sm:w-full sm:shadow-md"
+      >
+        <button
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded"
+          (click)="scrollTo('media-carousel')"
+        >
+          About post
+        </button>
+
+        <!-- <ng-container *ngIf="project?.codeSnippets?.length > 0"> -->
+        <button
+          *ngFor="let snippet of post?.codeSnippets; let i = index"
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          (click)="scrollTo('snippet-' + i)"
+        >
+          {{ snippet.heading }}
+        </button>
+        <!-- </ng-container> -->
       </div>
     </div>
 
-    <div *ngIf="post">
-      <div class="page-wrapper">
+    <!-- col 2 & 3 - main content-->
+    <div class="col-span-2">
+      <!-- Media Carousel Section -->
+      <!-- <div id="media-carousel" class="media-gallery mt-6">
+        <app-swiper-slider
+          [images]="post?.media?.images"
+          [swiperOptions]="{
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 4000 },
+        pagination: {
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      }"
+        ></app-swiper-slider>
+      </div> -->
+
+      <!-- post section -->
+      <div class="mt-6" id="about-project">
+        <h2 class="text-4xl">About the Project</h2>
+        <!-- <div *ngIf="project?.content && project.content; instanceof: Array"> -->
+        <div *ngFor="let item of post?.content">
+          <!-- headings -->
+          <h2
+            *ngIf="item.type === 'heading' && item.level === 2"
+            class="text-3xl mt-6"
+          >
+            {{ item.textContent ?? "" }}
+          </h2>
+
+          <h3
+            *ngIf="item.type === 'heading' && item.level === 3"
+            class="text-2xl mt-4"
+          >
+            {{ item.textContent ?? "" }}
+          </h3>
+
+          <!-- paragraphs -->
+          <p *ngIf="item.type === 'paragraph'">{{ item.textContent ?? "" }}</p>
+
+          <!-- lists -->
+          <ol *ngIf="item.type === 'list' && item.listType === 'ordered'">
+            <li *ngFor="let listItem of item.textContent | keyvalue">
+              {{ listItem.value }}
+            </li>
+          </ol>
+
+          <ul *ngIf="item.type === 'list' && item.listType === 'unordered'">
+            <li *ngFor="let listItem of item.textContent | keyvalue">
+              {{ listItem.value }}
+            </li>
+          </ul>
+
+          <!-- image -->
+          <img
+            *ngIf="item.type === 'image'"
+            [src]="item.src"
+            [alt]="item.alt ?? ''"
+          />
+          <p *ngIf="item.type === 'image' && item.caption">
+            {{ item.caption }}
+          </p>
+        </div>
+      </div>
+      <!-- </div> -->
+
+      <!-- Code Snippets Section -->
+      <!-- <div class="code-preview mt-6" *ngIf="post.codeSnippets.length > 0">
+        <h2 class="text-2xl font-semibold">Code Snippets</h2>
+        <app-code-snippets
+          [codeSnippets]="post.codeSnippets"
+        ></app-code-snippets>
+      </div> -->
+
+      <!-- post conclusion -->
+      <!-- <div *ngIf="post?.conclusion">
+        <h2 class="text-3xl mt-6">Conclusion</h2>
+        <p>{{ post.conclusion.summary }}</p>
+        <p>{{ post.conclusion.callToAction }}</p>
+      </div> -->
+    </div>
+
+    <!-- <div *ngIf="post">
+      <div class="blog-post-wrapper">
         <h1>{{ post.title }}</h1>
         <p>{{ post.description }}</p>
 
@@ -43,6 +199,17 @@
           </p>
         </div>
       </div>
+    </div> -->
+
+    <!-- search/filter - column 4 -->
+    <div class="col-span-1 lg:sticky lg:top-20 self-start">
+      <!-- <div class="col-span-1 lg:fixed lg:top-0 self-start"> -->
+      <div class="p-4 hidden md:flex bg-gray-500 rounded shadow">
+        <!-- Add filter/search content here -->
+        <p class="text-sm font-semibold">Filters/Search</p>
+      </div>
     </div>
+    <!-- </section> -->
+    <!-- </div> -->
   </section>
 </div>

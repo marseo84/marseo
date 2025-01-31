@@ -3,47 +3,55 @@ export interface BlogPost {
   title: string;
   slug: string;
   description: string;
-  content: BlogContent;
-  date: string;
-  lastUpdateDate: string;
-  tags: string[];
   category: string;
+  tags: string[];
+  featured: boolean;
+  publishDate: string;
+  lastUpdateDate: string;
   popularity: number;
-  codeImage?: string;
-}
-
-export interface BlogContent {
-  headings: string[];
-  paragraphs: Paragraph[];
-  lists: BlogLists;
+  languages: string[];
+  codeImage: Language[]; // Keep codeImage as an array of Language objects
   codeSnippets: CodeSnippet[];
-  media: BlogMedia;
-  conclusion?: BlogConclusion;
+  github: string | null;
+  liveDemo: string | null;
+  content: ContentItem[];
+  media: Media;
+  conclusion: BlogConclusion;
+  projects: number[]; // Array of project IDs
 }
 
-export interface Paragraph {
-  name: string;
-  text: string;
-}
-
-export interface BlogLists {
-  ordered: string[];
-  unordered: string[];
+export interface Language {
+  language: string;
+  code: string;
 }
 
 export interface CodeSnippet {
-  language: string;
-  snippet: string;
+  heading: string;
+  description?: string;
+  languages: Language[];
 }
 
-export interface BlogMedia {
+export interface ContentItem {
+  type: 'heading' | 'paragraph' | 'list' | 'image' | 'video' | 'quote';
+  level?: number; // For headings
+  textContent?: string | string[]; // String for paragraphs, headings, quotes. Array of strings for lists.
+  publishDate: string;
+  lastUpdateDate: string;
+  status: 'draft' | 'published';
+  listType: 'ordered' | 'unordered';
+  src?: string; // For images and videos
+  url?: string; // For images and videos
+  alt?: string; // For images
+  caption?: string; // For images and videos
+}
+
+export interface Media {
   images: MediaItem[];
-  videos: MediaItem[];
 }
 
 export interface MediaItem {
   url: string;
-  alt: string;
+  alt?: string;
   caption?: string;
 }
 
