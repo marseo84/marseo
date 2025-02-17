@@ -13,9 +13,10 @@
       <div class="language-section" *ngFor="let language of snippet.languages">
         <h4>{{ language.language.toUpperCase() }}</h4>
         <pre>
-        <code
+          <code
+          #codeElement
         [class]="'language-' + language.language"
-        [innerText]="language.code"
+        [innerHTML]="language.code | safeHtml"
         >
         </code>
       </pre>

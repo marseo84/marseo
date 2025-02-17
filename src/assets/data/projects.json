@@ -1,8 +1,186 @@
 [
   {
     "id": 1,
+    "title": "La Martastica",
+    "slug": "la-martastica",
+    "shortDescription": "A modern, front-end web application built with Angular.",
+    "description": "This portfolio website is esigned to provide an optimized user experience through efficient rendering, dynamic content loading, and a well-structured component architecture. The application will be expanded by a back-end built in Symfony.",
+    "tags": ["Frontend", "Angular", "Tailwind CSS", "Vite", "TypeScript"],
+    "featured": true,
+    "publishDate": "2024-11-02",
+    "lastUpdateDate": "2024-11-02",
+    "popularity": 85,
+    "languages": ["html", "css", "typescript"],
+    "codeImage": [],
+    "codeSnippets": [
+      {
+        "heading": "Dynamic Data Fetching & Transformation (Contact Page Service)",
+        "description": "A data-fetching service for fetching structured content from JSON while handling missing properties. API integration, data transformation, and observables in Angular",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "getContact(): Observable<any> {\n return this.fetchJSON<any>('contact').pipe(\n map((data) => ({\n title: data.TITLE || '',\n description: {\n line1: data.DESCRIPTION?.LINE_1 || '',\n line2: data.DESCRIPTION?.LINE_2 || '',\n },\n form: {\n name: {\n label: data.FORM?.NAME?.LABEL || '',\n placeholder: data.FORM?.NAME?.PLACEHOLDER || '',\n requiredError: data.FORM?.NAME?.REQUIRED_ERROR || '',\n },\n email: {\n label: data.FORM?.EMAIL?.LABEL || '',\n placeholder: data.FORM?.EMAIL?.PLACEHOLDER || '',\n requiredError: data.FORM?.EMAIL?.REQUIRED_ERROR || '',\n },\n message: {\n label: data.FORM?.MESSAGE?.LABEL || '',\n placeholder: data.FORM?.MESSAGE?.PLACEHOLDER || '',\n requiredError: data.FORM?.MESSAGE?.REQUIRED_ERROR || '',\n },\n submitButton: data.FORM?.SUBMIT_BUTTON || '',\n },\n contactInfo: {\n emailLabel: data.CONTACT_INFO?.EMAIL_LABEL || '',\n email: data.CONTACT_INFO?.EMAIL || '',\n telLabel: data.CONTACT_INFO?.TEL_LABEL || '',\n tel: data.CONTACT_INFO?.TEL || '',\n },\n }))\n );\n }\n"
+          }
+        ],
+        "notes": "A data-fetching service..."
+      },
+      {
+        "heading": "Custom Directive for In-Viewport Detection",
+        "description": "This directive emits an event whenever an element enters or exits the viewport, allowing for lazy animations and efficient resource loading.",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "import { Directive, ElementRef, EventEmitter, Output, AfterViewInit } from '@angular/core';\n@Directive({ ... })"
+          }
+        ],
+        "notes": "This directive emits an event..."
+      },
+      {
+        "heading": "Responsive Navigation Bar with Dropdown",
+        "description": "Mobile-friendly navigation, Angular event binding, and dynamic class toggling.",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "export class NavbarComponent { ... }\n"
+          },
+          {
+            "language": "html",
+            "code": "<nav class=\"navbar\"> ... </nav>"
+          }
+        ],
+        "notes": "Mobile-friendly navigation..."
+      },
+      {
+        "heading": "Dynamic Swiper.js Carousel for Image Sliders",
+        "description": "Angular + Swiper.js integration, dynamic data binding, and component reuse",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "import { Component, Input } from '@angular/core';\n@Component({ ... })"
+          }
+        ],
+        "notes": "Angular + Swiper.js integration..."
+      },
+      {
+        "heading": "Angular Form with Validation",
+        "description": null,
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "import { Component } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\n@Component({ ... })"
+          },
+          {
+            "language": "html",
+            "code": "<form [formGroup]=\"contactForm\" (ngSubmit)=\"onSubmit()\"> ... </form>"
+          }
+        ],
+        "notes": null
+      }
+    ],
+    "github": null,
+    "liveDemo": null,
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Project Description",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This project is a modern, front-end web application built with Angular and Symfony, designed to provide an optimized user experience through efficient rendering, dynamic content loading, and a well-structured component architecture. The application will be expanded by a back-end built in Symfony.",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Key Features",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Frontend: Angular with Vite for optimized builds\nStyling: Tailwind CSS with custom themes\nComponent-based architecture for reusability and maintainability\nLazy loading to improve performance\nSEO optimization with dynamic metadata handling\nResponsive design with distinct mobile and desktop navigations\nCustom directives, including an Intersection Observer-based viewport directive\nDynamic content loading using JSON",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Backend: Symfony + MariaDB for data persistence\nCRM & Admin section for managing customers and services",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Challenges & Solutions",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "textContent": "Intersection Observer Issue",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Problem: While implementing lazy loading and viewport-based animations, we encountered an SSR-related error:\nERROR ReferenceError: IntersectionObserver is not defined",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Solution:\nEnsured that IntersectionObserver is only accessed in the browser environment.\nUsed Angular’s isPlatformBrowser check to prevent execution on the server.",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "textContent": "Custom Swiper.js Integration",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Problem: Dynamic image carousels were not initializing correctly due to asynchronous data loading.",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Solution:\nUsed ngAfterViewInit to reinitialize Swiper once images were loaded.\nEnsured Swiper instances were properly destroyed before reinitialization.",
+        "date": null,
+        "status": null
+      }
+    ],
+    "media": {
+      "images": []
+    },
+    "conclusion": {
+      "summary": "This project demonstrates a strong understanding of Angular’s core concepts, component-based architecture, and performance optimizations. It showcases problem-solving skills in debugging SSR-related issues, integrating external libraries, and designing a maintainable codebase.",
+      "callToAction": null
+    }
+  },
+  {
+    "id": 2,
     "title": "Tvuj Vycepni",
     "slug": "tvuj-vycepni",
+    "shortDescription": "",
     "description": "A modern and visually appealing front-end website for a beer catering and sanitation business.",
     "tags": ["Frontend", "Angular", "Bootstrap", "CSS"],
     "featured": true,
@@ -216,6 +394,98 @@
     "conclusion": {
       "summary": "Tvuj Vycepni stands out as a prime example of modern web design tailored to small businesses.",
       "callToAction": "Explore the website and experience its features live!"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website",
+    "slug": "portfolio-website",
+    "shortDescription": "A dynamic and interactive portfolio website.",
+    "description": "This portfolio website showcases a collection of media items using vanilla JavaScript, Bootstrap, and Swiper.js.",
+    "tags": ["JavaScript", "Bootstrap", "Swiper.js"],
+    "featured": false,
+    "publishDate": "2024-11-02",
+    "lastUpdateDate": "2024-11-02",
+    "popularity": 85,
+    "languages": ["javascript", "html", "css"],
+    "codeImage": [],
+    "codeSnippets": [
+      {
+        "heading": "Dynamic Content Loading and Filtering",
+        "description": "Demonstrates how media items are dynamically loaded and displayed based on user-selected categories, utilizing Swiper.js for image carousels.",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "function loadContent(el, mgType) { ... }\nsidebar.addEventListener(\"click\", handleEvent); ...\nfunction handleEvent(event) { ... }"
+          }
+        ],
+        "notes": "The loadContent function filters projects and updates the content area. Event listeners handle category clicks."
+      },
+      {
+        "heading": "Featured Media Rotation",
+        "description": "Showcases the automatic rotation of featured media items on the homepage.",
+        "imageUrl": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "function randomSelectFeaturedMg() { ... }\nconst myInterval = setInterval(randomSelectFeaturedMg, 5000);"
+          }
+        ],
+        "notes": "The randomSelectFeaturedMg function selects a random featured item and simulates a click. setInterval triggers this function periodically."
+      }
+    ],
+    "github": null,
+    "liveDemo": null,
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Project Description",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This project is a dynamic and interactive portfolio website built using vanilla JavaScript, the Bootstrap framework for styling and layout, and Swiper.js for creating image carousels. The website showcases a collection of media items.",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Dynamic Content Loading and Filtering",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "The website dynamically loads and filters media items based on user-selected categories.  Swiper.js is used to create image carousels for projects with multiple media files.",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "textContent": "Featured Media Rotation",
+        "date": null,
+        "status": null
+      },
+      {
+        "type": "paragraph",
+        "textContent": "Featured media items on the homepage rotate automatically every 5 seconds, showcasing different projects.",
+        "date": null,
+        "status": null
+      }
+    ],
+    "media": {
+      "images": []
+    },
+    "conclusion": {
+      "summary": "This project demonstrates the use of vanilla JavaScript, Bootstrap, and Swiper.js to create a dynamic and interactive portfolio website with features like dynamic content loading and a rotating featured media section.",
+      "callToAction": null
     }
   }
 ]

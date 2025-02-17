@@ -16,8 +16,14 @@ export interface CtaData {
 
 export interface CodeSnippet {
   heading: string;
-  description: string; // Make sure this is always a string
+  description: string;
   resultImage?: string;
-  languages: { language: string; code: string }[];
+  // languages: { language: string; code: string }[];
+  languages: Language[];
   notes?: string;
+}
+
+export interface Language {
+  language: 'html' | 'css' | 'javascript' | 'typescript' | 'scss' | 'php';
+  code: string;
 }
