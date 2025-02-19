@@ -1,14 +1,14 @@
-<div class="container-blog-home">
+<div class="container page-wrapper">
   <div class="filters-wrapper">
     <!-- Search Input -->
-    <input
+    <!-- <input
       [(ngModel)]="searchTerm"
       (input)="onSearchTermChange(searchTerm)"
       placeholder="Search Blog Posts"
-    />
+    /> -->
 
     <!-- Category Filter -->
-    <div class="category-filter">
+    <!-- <div class="category-filter">
       <button
         *ngFor="let category of categories"
         (click)="filterByCategory(category)"
@@ -16,10 +16,10 @@
       >
         {{ category }}
       </button>
-    </div>
+    </div> -->
 
     <!-- Tag Filter -->
-    <div class="tag-filter">
+    <!-- <div class="tag-filter">
       <button
         *ngFor="let tag of tags"
         (click)="filterByTag(tag)"
@@ -27,17 +27,17 @@
       >
         {{ tag }}
       </button>
-    </div>
+    </div> -->
 
     <!-- Sorting Dropdown -->
-    <div class="sort-filter">
+    <!-- <div class="sort-filter">
       <label for="sort">Sort By:</label>
       <select id="sort" [(ngModel)]="sortBy" (change)="onSortChange(sortBy)">
         <option value="date">Date</option>
         <option value="title">Title</option>
         <option value="popularity">Popularity</option>
       </select>
-    </div>
+    </div> -->
   </div>
 
   <!-- GRID - START -->
@@ -63,7 +63,7 @@
         [id]="blog.id"
         [tags]="blog.tags"
         [title]="blog.title"
-        [description]="blog.description"
+        [description]="blog.description ?? ''"
         [slug]="blog.slug"
         [category]="blog.category"
         [type]="'blog'"

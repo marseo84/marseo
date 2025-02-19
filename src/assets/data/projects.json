@@ -16,79 +16,75 @@
       {
         "heading": "Dynamic Data Fetching & Transformation (Contact Page Service)",
         "description": "A data-fetching service for fetching structured content from JSON while handling missing properties. API integration, data transformation, and observables in Angular",
-        "imageUrl": null,
+        "resultImage": null,
         "caption": null,
         "languages": [
           {
             "language": "typescript",
-            "code": "getContact(): Observable<any> {\n return this.fetchJSON<any>('contact').pipe(\n map((data) => ({\n title: data.TITLE || '',\n description: {\n line1: data.DESCRIPTION?.LINE_1 || '',\n line2: data.DESCRIPTION?.LINE_2 || '',\n },\n form: {\n name: {\n label: data.FORM?.NAME?.LABEL || '',\n placeholder: data.FORM?.NAME?.PLACEHOLDER || '',\n requiredError: data.FORM?.NAME?.REQUIRED_ERROR || '',\n },\n email: {\n label: data.FORM?.EMAIL?.LABEL || '',\n placeholder: data.FORM?.EMAIL?.PLACEHOLDER || '',\n requiredError: data.FORM?.EMAIL?.REQUIRED_ERROR || '',\n },\n message: {\n label: data.FORM?.MESSAGE?.LABEL || '',\n placeholder: data.FORM?.MESSAGE?.PLACEHOLDER || '',\n requiredError: data.FORM?.MESSAGE?.REQUIRED_ERROR || '',\n },\n submitButton: data.FORM?.SUBMIT_BUTTON || '',\n },\n contactInfo: {\n emailLabel: data.CONTACT_INFO?.EMAIL_LABEL || '',\n email: data.CONTACT_INFO?.EMAIL || '',\n telLabel: data.CONTACT_INFO?.TEL_LABEL || '',\n tel: data.CONTACT_INFO?.TEL || '',\n },\n }))\n );\n }\n"
+            "code": "getContact(): Observable<any> { \n     return this.fetchJSON<any>('contact').pipe( \n       map((data) => ({         title: data.TITLE || '', \n         description: { \n           line1: data.DESCRIPTION?.LINE_1 || '', \n           line2: data.DESCRIPTION?.LINE_2 || '', \n         }, \n         form: { \n           name: { \n             label:data.FORM?.NAME?.LABEL || '', \n             placeholder: data.FORM?.NAME?.PLACEHOLDER || '', \n             requiredError:data.FORM?.NAME?.REQUIRED_ERROR || '', \n           }, \n           email: { \n             label: data.FORM?.EMAIL?.LABEL || '', \n            placeholder: data.FORM?.EMAIL?.PLACEHOLDER || '', \n             requiredError: data.FORM?.EMAIL?.REQUIRED_ERROR || '', \n           }, \n           message: { \n             label: data.FORM?.MESSAGE?.LABEL || '', \n             placeholder: data.FORM?.MESSAGE?.PLACEHOLDER || '', \n             requiredError: data.FORM?.MESSAGE?.REQUIRED_ERROR || '', \n           }, \n           submitButton: data.FORM?.SUBMIT_BUTTON || '', \n         }, \n         contactInfo: { \n           emailLabel: data.CONTACT_INFO?.EMAIL_LABEL || '', \n           email: data.CONTACT_INFO?.EMAIL || '', \n           telLabel: data.CONTACT_INFO?.TEL_LABEL || '', \n           tel: data.CONTACT_INFO?.TEL || '', \n         }, \n       })) \n     ); \n }"
           }
         ],
-        "notes": "A data-fetching service..."
+        "notes": ""
       },
       {
         "heading": "Custom Directive for In-Viewport Detection",
         "description": "This directive emits an event whenever an element enters or exits the viewport, allowing for lazy animations and efficient resource loading.",
-        "imageUrl": null,
+        "resultImage": null,
         "caption": null,
         "languages": [
           {
             "language": "typescript",
-            "code": "import { Directive, ElementRef, EventEmitter, Output, AfterViewInit } from '@angular/core';\n@Directive({ ... })"
+            "code": "import { Directive, ElementRef, EventEmitter, Output, AfterViewInit } from '@angular/core';\n @Directive({ selector: '[appInViewport]', \n }) \n export class InViewportDirective implements AfterViewInit { \n   @Output() isVisible = new EventEmitter<boolean>(); \n  \n   constructor(private el: ElementRef) {} \n  \n  ngAfterViewInit() { \n     if ('IntersectionObserver' in window) { \n      const observer = new IntersectionObserver(([entry]) => { \n        this.isVisible.emit(entry.isIntersecting); \n      }, { threshold: 0.1 }); \n \n       observer.observe(this.el.nativeElement); \n     } \n   } \n } \n "
           }
         ],
-        "notes": "This directive emits an event..."
+        "notes": ""
       },
       {
         "heading": "Responsive Navigation Bar with Dropdown",
         "description": "Mobile-friendly navigation, Angular event binding, and dynamic class toggling.",
-        "imageUrl": null,
+        "resultImage": null,
         "caption": null,
         "languages": [
           {
             "language": "typescript",
-            "code": "export class NavbarComponent { ... }\n"
+            "code": "export class NavbarComponent { \n   isMenuOpen = false; \n  \n   toggleMenu() { \n     this.isMenuOpen = !this.isMenuOpen; \n  } \n }"
           },
           {
             "language": "html",
-            "code": "<nav class=\"navbar\"> ... </nav>"
+            "code": "&lt;nav class=\"navbar\"&gt; \n   &lt;div class=\"logo\"&gt;La Martastica&lt;/div&gt; \n   &lt;button (click)=\"toggleMenu()\" class=\"menu-toggle\"&gt;☰&lt;/button&gt; \n   &lt;ul [class.open]=\"isMenuOpen\"&gt;  \n     &lt;li&gt;&lt;a routerLink=\"/\"&gt;Home&lt;/a&gt;&lt;/li&gt; \n     &lt;li&gt;&lt;a routerLink=\"/about\"&gt;About&lt;/a&gt;&lt;/li&gt; \n     &lt;li&gt;&lt;a routerLink=\"/services\"&gt;Services&lt;/a&gt;&lt;/li&gt; \n     &lt;li&gt;&lt;a routerLink=\"/contact\"&gt;Contact&lt;/a&gt;&lt;/li&gt; \n   &lt;/ul&gt; \n &lt;/nav&gt;"
           }
         ],
         "notes": "Mobile-friendly navigation..."
       },
       {
-        "heading": "Dynamic Swiper.js Carousel for Image Sliders",
-        "description": "Angular + Swiper.js integration, dynamic data binding, and component reuse",
-        "imageUrl": null,
+        "heading": "Dynamic Swiper.js Carousel for Image and Vimeo Slides",
+        "description": "This Angular template code displays a carousel of project media (images or Vimeo videos) for each project in a list.  It uses an *ngFor loop to iterate through the projects and a swiper-container for the carousel functionality, conditionally rendering images or Vimeo players based on the media type.  Clicking an image opens a modal.",
+        "resultImage": null,
         "caption": null,
         "languages": [
-          {
-            "language": "typescript",
-            "code": "import { Component, Input } from '@angular/core';\n@Component({ ... })"
-          }
-        ],
-        "notes": "Angular + Swiper.js integration..."
-      },
-      {
-        "heading": "Angular Form with Validation",
-        "description": null,
-        "imageUrl": null,
-        "caption": null,
-        "languages": [
-          {
-            "language": "typescript",
-            "code": "import { Component } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\n@Component({ ... })"
-          },
           {
             "language": "html",
-            "code": "<form [formGroup]=\"contactForm\" (ngSubmit)=\"onSubmit()\"> ... </form>"
+            "code": "&lt;div \n       *ngFor=&quot;let project of projects; trackBy: trackByFn&quot; \n       class=&quot;project-card&quot; \n     &gt; \n       &lt;swiper-container \n         #swiperContainer \n         class=&quot;swiper-container&quot; \n         *ngIf=&quot;project.media?.length &gt; 0&quot; \n         [pagination]=&quot;false&quot; \n         [navigation]=&quot;true&quot; \n         [loop]=&quot;true&quot; \n         [spaceBetween]=&quot;20&quot; \n         [speed]=&quot;800&quot; \n       &gt; \n         &lt;swiper-slide *ngFor=&quot;let media of project.media&quot; class=&quot;swiper-slide&quot;&gt; \n           &lt;ng-container *ngIf=&quot;media.type === 'image'; else videoTemplate&quot;&gt; \n             &lt;div class=&quot;project-image-wrapper&quot;&gt; \n               &lt;img \n                 [src]=&quot;media.src&quot; \n                 [alt]=&quot;project.title&quot; \n                 class=&quot;project-image cursor-pointer&quot; \n                 (click)=&quot;openModal(media.src, project.title)&quot; \n               /&gt; \n             &lt;/div&gt; \n           &lt;/ng-container&gt; \n           &lt;ng-template #videoTemplate&gt; \n             &lt;div class=&quot;vimeo-wrapper&quot;&gt; \n               &lt;app-vimeo-player \n                 [jsonData]=&quot;media&quot; \n                 [autoplay]=&quot;false&quot; \n                 [loop]=&quot;true&quot; \n                 [muted]=&quot;true&quot; \n                 [controls]=&quot;true&quot; \n                 [responsive]=&quot;true&quot; \n                 [color]=&quot;'#FF5733'&quot; \n                 [title]=&quot;false&quot; \n                 [byline]=&quot;false&quot; \n                 [portrait]=&quot;false&quot; \n                 [texttrack]=&quot;'en'&quot; \n               &gt;&lt;/app-vimeo-player&gt; \n             &lt;/div&gt; \n           &lt;/ng-template&gt; \n         &lt;/swiper-slide&gt; \n       &lt;/swiper-container&gt; \n     &lt;/div&gt; \n "
+          }
+        ],
+        "notes": null
+      },
+      {
+        "heading": "Form Submission",
+        "description": null,
+        "resultImage": null,
+        "caption": null,
+        "languages": [
+          {
+            "language": "typescript",
+            "code": "onSubmit() { \n     if (this.contactForm.invalid) { \n       return; \n     } \n  \n     const headers = new HttpHeaders({ 'Content-Type': 'application/json' }); \n     const body = this.contactForm.value; \n  \n     this.http \n       .post('https://formspree.io/f/meoqbkdn', body, { headers }) \n       .pipe(takeUntil(this.destroy$)) \n       .subscribe({ \n         next: (response: any) =&gt; { \n           console.log('Form submitted successfully', response); \n           this.contactForm.reset(); \n           this.router.navigate(['/thank-you']); \n         }, \n         error: (error: any) =&gt; { \n           console.error('Form submission error', error); \n         }, \n       }); \n   }"
           }
         ],
         "notes": null
       }
     ],
-    "github": null,
-    "liveDemo": null,
+    "github": "https://github.com/marseo84/lamartastica",
+    "liveDemo": "https://lamartastica.com/",
     "content": [
       {
         "type": "heading",
@@ -180,8 +176,8 @@
     "id": 2,
     "title": "Tvuj Vycepni",
     "slug": "tvuj-vycepni",
-    "shortDescription": "",
-    "description": "A modern and visually appealing front-end website for a beer catering and sanitation business.",
+    "shortDescription": "A modern and visually appealing front-end website for a beer catering and sanitation business.",
+    "description": "This Angular project was developed for a beer catering and tap maintenance service company. The website provides information about the services offered, displays a price list, includes an About Us section, and features a contact form for inquiries. While the functionality is straightforward, the project's standout feature is its distinctive styling. The color palette, gradients, and border treatments were carefully chosen to evoke the look and feel of a beer mat, creating a visually appealing and brand-relevant user experience.",
     "tags": ["Frontend", "Angular", "Bootstrap", "CSS"],
     "featured": true,
     "publishDate": "2024-11-01",
@@ -204,50 +200,34 @@
     ],
     "codeSnippets": [
       {
-        "heading": "Hero Section",
-        "description": "HTML, CSS, and JavaScript code for the hero section, featuring a full-screen background image.",
-        "imageUrl": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
-        "caption": "Code snippet for the hero section with a full-screen background.",
+        "heading": "Beer Mat Inspired Styling",
+        "description": "This CSS defines a beer mat-inspired color palette using earthy tones. A thick, rounded border class mimics the mat's edge, while a subtle beige-brown gradient adds depth and texture.",
+        "resultImage": "assets/images/tvuj-vycepni-features-20250219.webp",
+        "caption": null,
         "languages": [
           {
-            "language": "html",
-            "code": "<div class='hero'></div>"
-          },
-          {
             "language": "css",
-            "code": ".hero { background-image: url('images/hero-beer.jpg'); height: 100vh; display: flex; align-items: center; justify-content: center; }"
-          },
-          {
-            "language": "javascript",
-            "code": "console.log('Hero section initialized');"
+            "code": ".wrapper-cta { \n   position: relative; \n   padding: 0.3em; \n   border-radius: 8px; \n   overflow: hidden; \n } \n  \n .wrapper-cta::before { \n   content: &quot;&quot;; \n   position: absolute; \n   top: 0; \n   left: 0; \n   right: 0; \n   bottom: 0; \n   margin: 8px; \n   border: 2px solid var(--beige); \n   border-radius: 6px; \n   z-index: 1; \n }"
           }
         ],
-        "notes": "Ensure the background image URL is correct and the script is linked properly."
+        "notes": null
       },
       {
-        "heading": "Responsive Navigation",
-        "description": "Code for a responsive navigation bar using Bootstrap.",
-        "imageUrl": "images/tvuj-vycepni-navbar-code.png",
-        "caption": "Snippet showcasing the responsive navigation bar.",
+        "heading": "Contact Form",
+        "description": "Contact form within a styled container uses Bootstrap and custom css. The form includes fields for name, email, service selection, date and time, number of guests (using a slider), and a free-text message area.",
+        "resultImage": "assets/images/tvuj-vycepni-contact-form-20250219.webp",
+        "caption": null,
         "languages": [
           {
             "language": "html",
-            "code": "<nav class='navbar navbar-expand-lg navbar-light bg-light'>...</nav>"
-          },
-          {
-            "language": "css",
-            "code": ".navbar { margin-bottom: 20px; }"
-          },
-          {
-            "language": "javascript",
-            "code": "document.querySelector('.navbar-toggler').addEventListener('click', toggleNavbar);"
+            "code": "&lt;div \n     class=&quot;gradient-green rounded cta text-light py-5 px-4 mb-5 beer-border-lg d-flex justify-content-center w-75 mx-auto&quot; \n   &gt; \n     &lt;div class=&quot;beer-border-xs mb-4 p-3 d-inline-block w-75&quot;&gt; \n       &lt;form action=&quot;&quot; method=&quot;post&quot;&gt; \n         &lt;div class=&quot;form-group mb-3&quot;&gt; \n           &lt;label class=&quot;mb-1&quot; for=&quot;name&quot;&gt;Jméno&lt;/label&gt; \n           &lt;input \n             type=&quot;text&quot; \n             class=&quot;form-control&quot; \n             id=&quot;name&quot; \n             aria-describedby=&quot;emailHelp&quot; \n             placeholder=&quot;Jana Novotná&quot; \n           /&gt; \n         &lt;/div&gt; \n  \n         &lt;div class=&quot;form-group mb-5&quot;&gt; \n           &lt;label class=&quot;mb-1&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt; \n           &lt;input \n             type=&quot;email&quot; \n             class=&quot;form-control&quot; \n             id=&quot;email&quot; \n             aria-describedby=&quot;emailHelp&quot; \n             laceholder=&quot;jana.novotna@email.cz&quot; \n           /&gt; \n         &lt;/div&gt; \n  \n         &lt;div class=&quot;form-group mb-3&quot;&gt; \n           &lt;label class=&quot;mb-1&quot; for=&quot;contact-service&quot; \n             &gt;O jakou službu máš zájem?&lt;/label \n           &gt; \n           &lt;select class=&quot;form-control&quot;id=&quot;contact-service&quot;&gt; \n             &lt;option&gt;-- Vyber si --&lt;/option&gt; \n             &lt;option&gt;Pivní catering&lt;/option&gt; \n             &lt;option&gt;Výčepní show&lt;/option&gt; \n             &lt;option&gt;Škola čepování&lt;/option&gt; \n             &lt;option&gt;Sanitace nápojových cest&lt;/option&gt; \n           &lt;/select&gt; \n         &lt;/div&gt; \n  \n         &lt;!-- display options based on the selected service --&gt; \n  \n         &lt;div class=&quot;form-group mb-3&quot;&gt; \n           &lt;div class=&quot;row&quot;&gt; \n             &lt;div class=&quot;col-12&quot;&gt; \n               &lt;label class=&quot;mb-1&quot; for=&quot;date&quot; class=&quot;d-block w-100&quot; \n                 &gt;Datum a čas&lt;/label \n               &gt; \n             &lt;/div&gt; \n             &lt;div class=&quot;col-xs-12 col-md-6 mb-1&quot;&gt; \n               &lt;input \n                 type=&quot;date&quot; \n                 class=&quot;form-control&quot; \n                 id=&quot;date&quot; \n                 aria-describedby=&quot;emailHelp&quot; \n               /&gt; \n             &lt;/div&gt; \n             &lt;div class=&quot;col-xs-12 col-md-6&quot;&gt; \n               &lt;input \n                 type=&quot;time&quot; \n                 class=&quot;form-control&quot; \n                 id=&quot;time&quot; \n                 aria-describedby=&quot;emailHelp&quot; \n               /&gt; \n             &lt;/div&gt; \n           &lt;/div&gt; \n         &lt;/div&gt; \n  \n         &lt;div class=&quot;form-group mb-3&quot;&gt; \n           &lt;label class=&quot;mb-1&quot; for=&quot;guests&quot; \n             &gt;Počet pijících: &lt;span class=&quot;guest-number&quot;&gt;40&lt;/span&gt;&lt;/label \n           &gt; \n           input \n             type=&quot;range&quot; \n             class=&quot;form-control&quot; \n             id=&quot;guests&quot; \n             aria-describedby=&quot;emailHelp&quot; \n           /&gt; \n         &lt;/div&gt; \n \n         &lt;div class=&quot;form-group mb-3&quot;&gt; \n           &lt;label class=&quot;mb-1&quot; for=&quot;message&quot;&gt;Máš ještě něco na srdci?&lt;/label&gt; \n           &lt;textarea \n             name=&quot;message&quot; \n             id=&quot;message&quot; \n             class=&quot;form-control w-100 rounded&quot; \n             aria-describedby=&quot;emailHelp&quot; \n             placeholder=&quot;Můj milý výčepní, ...&quot; \n           &gt;&lt;/textarea&gt; \n         &lt;/div&gt; \n  \n         &lt;div class=&quot;beer-border-xs mt-5 mb-3 mx-auto p-1&quot;&gt; \n           &lt;a href=&quot;kontakt.html&quot; class=&quot;btn btn-lg btn-light w-100&quot;&gt;Odeslat&lt;/a&gt; \n         &lt;/div&gt; \n       &lt;/form&gt; \n     &lt;/div&gt; \n   &lt;/div&gt;"
           }
         ],
-        "notes": "Add appropriate aria-labels for accessibility."
+        "notes": null
       }
     ],
-    "github": "https://github.com/user/tvuj-vycepni",
-    "liveDemo": "https://tvuj-vycepni.com",
+    "github": "https://github.com/marseo84/tvuj-vycepni",
+    "liveDemo": null,
     "content": [
       {
         "type": "heading",
@@ -266,12 +246,6 @@
         "type": "heading",
         "level": 3,
         "textContent": "Project Overview",
-        "date": "2025-01-29",
-        "status": "published"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "This project involved creating a modern and visually appealing website for a beer catering and sanitation business.  The goal was to showcase their services and make it easy for potential clients to get in touch.",
         "date": "2025-01-29",
         "status": "published"
       },
@@ -337,57 +311,20 @@
         ],
         "date": "2025-01-29",
         "status": "published"
-      },
-      {
-        "type": "image",
-        "src": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
-        "alt": "Tvuj Vycepni website hero image",
-        "caption": "Hero section showcasing beer catering.",
-        "aria-label": "text description aria label",
-        "date": "2025-01-29",
-        "status": "published"
-      },
-      {
-        "type": "image",
-        "src": "another-image-url.jpg",
-        "alt": "Tvuj Vycepni website services",
-        "caption": "Showcasing the sanitation services.",
-        "aria-label": "text description aria label",
-        "date": "2025-01-29",
-        "status": "published"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "textContent": "Conclusion",
-        "date": "2025-01-29",
-        "status": "published"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "Tvuj Vycepni provides a user-friendly and informative online presence, effectively promoting their beer catering and sanitation services. The modern design and robust technology choices ensure a positive user experience.",
-        "date": "2025-01-29",
-        "status": "published"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "Explore the website and experience its features live!",
-        "date": "2025-01-29",
-        "status": "published"
       }
     ],
 
     "media": {
       "images": [
         {
-          "url": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
-          "alt": "Hero section of Tvuj Vycepni website.",
-          "caption": "Hero section of Tvuj Vycepni website."
+          "url": "",
+          "alt": null,
+          "caption": null
         },
         {
-          "url": "https://cdn.pixabay.com/photo/2020/09/14/07/40/vehicle-5570248_1280.jpg",
-          "alt": "Slider section displaying featured services.",
-          "caption": "Slider section displaying featured services."
+          "url": "",
+          "alt": null,
+          "caption": null
         }
       ]
     },
@@ -412,32 +349,32 @@
     "codeSnippets": [
       {
         "heading": "Dynamic Content Loading and Filtering",
-        "description": "Demonstrates how media items are dynamically loaded and displayed based on user-selected categories, utilizing Swiper.js for image carousels.",
-        "imageUrl": null,
+        "description": "This code dynamically loads and displays media items based on user-selected categories, using Swiper.js to create image carousels for projects with multiple media files.  The loadContent function filters projects by category and updates the display, triggered by user category clicks.",
+        "resultImage": null,
         "caption": null,
         "languages": [
           {
             "language": "javascript",
-            "code": "function loadContent(el, mgType) { ... }\nsidebar.addEventListener(\"click\", handleEvent); ...\nfunction handleEvent(event) { ... }"
+            "code": "function loadContent(el, mgType) { \n   // clear previous content \n   el.innerHTML = &quot;&quot;; \n  \n   // array var - filter if not all \n   let contentArr = \n     mgType === &quot;all&quot; \n       ? populatedContent \n  \n       : populatedContent.filter((item) =&gt; item.id == mgType); \n  \n   // populatedContent.forEach((category) =&gt; { \n   contentArr.forEach((category) =&gt; { \n     // inner content \n     let sectionContent = &quot;&quot;; \n     category.mg.forEach((item) =&gt; { \n       if (item.source.length &gt; 1) { \n         // multiple versions (Swiper) \n         let mgSlides = &quot;&quot;; \n  \n         item.source.forEach((mgVar) =&gt; { \n           mgSlides += `  \n                             &lt;div class=&quot;swiper-slide&quot;&gt; \n                               &lt;img \n                                 src=&quot;${mgVar}&quot; \n                                 class=&quot;mg-instance&quot; \n                                 alt=&quot;&quot; \n                               /&gt; \n                             &lt;/div&gt; \n                            `; \n         }); \n  \n         sectionContent += ` \n                             &lt;div class=&quot;mg-wrapper&quot;&gt; \n                               &lt;!-- Slider main container --&gt; \n                               &lt;div class=&quot;swiper&quot;&gt; \n                                 &lt;!-- Additional required wrapper --&gt; \n                                 &lt;div class=&quot;swiper-wrapper&quot;&gt; \n                                   &lt;!-- Slides --&gt; \n                                   ${mgSlides} \n                                 &lt;/div&gt; \n                                 &lt;!-- navigation buttons --&gt; \n                                 &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt; \n                                 &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt; \n                               &lt;/div&gt; \n                             &lt;/div&gt; \n          \n         `; \n       } else { \n         // one version \n         sectionContent += ` &lt;div class=&quot;mg-wrapper&quot;&gt; \n                               &lt;img \n                                 src=&quot;${item.source[0]}&quot; \n                                 class=&quot;mg-instance&quot; \n                                 alt=&quot;&quot; \n                               /&gt; \n                             &lt;/div&gt; \n                            `; \n       } \n     }); \n     // append the section \n     el.innerHTML += `   &lt;div class=&quot;content-section&quot; id=&quot;${category.id}Section&quot;&gt; \n                           &lt;h2 class=&quot;my-4&quot;&gt;${category.type}&lt;/h2&gt; \n                           &lt;div class=&quot;content-section-body&quot;&gt; \n                             ${sectionContent} \n                           &lt;/div&gt; \n                         &lt;/div&gt; \n                     `; \n   }); \n  \n   // re-initialize Swiper after the content is added \n   document.querySelectorAll(&quot;.swiper&quot;).forEach((swiperElement) =&gt; { \n     const swiper = new Swiper(&quot;.swiper&quot;, { \n       // Optional parameters \n       loop: true, \n  \n       // Navigation arrows \n       navigation: { \n         nextEl: &quot;.swiper-button-next&quot;, \n         prevEl: &quot;.swiper-button-prev&quot;, \n       }, \n     }); \n   }); \n } \n  \n sidebar.addEventListener(&quot;click&quot;, handleEvent); // Filter on category click \n  \n function handleEvent(event) { \n   if (event.target.classList.contains(&quot;mg-type-selector&quot;)) { \n     selectedMgType = event.target.id; \n     loadContent(content, selectedMgType); // Load filtered content \n     // ... active class handling ... \n     scrollToTop(); \n   } \n }"
           }
         ],
-        "notes": "The loadContent function filters projects and updates the content area. Event listeners handle category clicks."
+        "notes": null
       },
       {
         "heading": "Featured Media Rotation",
         "description": "Showcases the automatic rotation of featured media items on the homepage.",
-        "imageUrl": null,
+        "resultImage": null,
         "caption": null,
         "languages": [
           {
             "language": "javascript",
-            "code": "function randomSelectFeaturedMg() { ... }\nconst myInterval = setInterval(randomSelectFeaturedMg, 5000);"
+            "code": "function randomSelectFeaturedMg() { \n   let newIndex = 0; \n   let randomIndex = getRandomNumberWithMaxValue(populatedMgTypesLength); \n   if (randomIndex !== currentIndex) { \n     newIndex = randomIndex; \n   } else { \n     randomSelectFeaturedMg(); // Ensure different image is selected \n   } \n   currentIndex = updateCurrentIndex(newIndex); \n   populatedMgTypes[newIndex].click(); // Simulate click to update featured image \n } \n  \n const myInterval = setInterval(randomSelectFeaturedMg, 5000); // Rotate every 5 seconds"
           }
         ],
         "notes": "The randomSelectFeaturedMg function selects a random featured item and simulates a click. setInterval triggers this function periodically."
       }
     ],
-    "github": null,
+    "github": "https://github.com/marseo84/portfolio-website-vanilla",
     "liveDemo": null,
     "content": [
       {

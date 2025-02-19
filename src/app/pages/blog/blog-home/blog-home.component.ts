@@ -25,6 +25,7 @@ export class BlogHomeComponent implements OnInit {
   selectedCategory: string = 'all';
   selectedTag: string = '';
   searchTerm: string = '';
+  // description: string = '' ;
   sortBy: string = 'date'; // Default sorting option
 
   blogPosts$!: Observable<BlogPost[]>;
@@ -87,7 +88,7 @@ export class BlogHomeComponent implements OnInit {
         (post.tags && post.tags.includes(this.selectedTag));
       const matchesSearch =
         post.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-        post.description.toLowerCase().includes(this.searchTerm.toLowerCase());
+        post.description?.toLowerCase().includes(this.searchTerm.toLowerCase());
       return matchesCategory && matchesTag && matchesSearch;
     });
 

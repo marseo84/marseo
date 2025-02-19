@@ -1,11 +1,14 @@
+import { CodeSnippet } from './components.interface';
+
 export interface BlogPost {
   id: number;
   title: string;
   slug: string;
-  description: string;
+  shortDescription?: string;
+  description?: string;
   category: string;
   tags: string[];
-  featured: boolean;
+  featured: false;
   publishDate: string;
   lastUpdateDate: string;
   popularity: number;
@@ -25,11 +28,11 @@ export interface Language {
   code: string;
 }
 
-export interface CodeSnippet {
-  heading: string;
-  description?: string;
-  languages: Language[];
-}
+// export interface CodeSnippet {
+//   heading: string;
+//   description?: string;
+//   languages: Language[];
+// }
 
 export interface ContentItem {
   type: 'heading' | 'paragraph' | 'list' | 'image' | 'video' | 'quote';

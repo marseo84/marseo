@@ -59,10 +59,10 @@
         class="scroll-buttons flex mt-4 gap-2 flex-wrap sticky top-0 sm:left-0 sm:w-full sm:shadow-md"
       >
         <button
-          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded"
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           (click)="scrollTo('media-carousel')"
         >
-          About Project
+          [TOP]
         </button>
 
         <!-- <ng-container *ngIf="project?.codeSnippets?.length > 0"> -->
@@ -101,7 +101,7 @@
 
       <!-- about project section -->
       <div class="mt-6" id="about-project">
-        <h2 class="text-4xl">About the Project</h2>
+        <!-- <h2 class="text-4xl">About the Project</h2> -->
         <!-- <div *ngIf="project?.content && project.content; instanceof: Array"> -->
         <div *ngFor="let item of project.content">
           <h2
@@ -131,6 +131,7 @@
             *ngIf="item.type === 'image'"
             [src]="item.src"
             [alt]="item.alt"
+            class="rounded my-6"
           />
           <p *ngIf="item.type === 'image' && item.caption">
             {{ item.caption }}

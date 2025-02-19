@@ -3,8 +3,9 @@
     "id": 1,
     "title": "Mathine",
     "slug": "mathine",
+    "shortDescription": "Mathine is a fun and engaging web application designed to help kids learn and practice multiplication tables.",
     "description": "Mathine is a fun and engaging web application designed to help kids learn and practice multiplication tables. Inspired by the retro aesthetics of classic calculators and drum machines, Mathine offers a unique and visually appealing learning experience. This project is currently in its draft phase and is being actively developed.",
-    "category": "educational game",
+    "category": "javascript",
     "tags": ["JavaScript", "Math", "Education", "Game"],
     "featured": false,
     "publishDate": null,
@@ -73,96 +74,24 @@
         "status": "draft"
       },
       {
-        "type": "heading",
-        "level": 2,
-        "textContent": "Code Snippets",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "textContent": "Question Generation",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "JavaScript",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "code",
-        "language": "javascript",
-        "textContent": "function genQuestion() {\n  a = Math.floor(Math.random() * (11 - 1 + 1) + 1);\n  b = Math.floor(Math.random() * (11 - 1 + 1) + 1);\n  x = b - 1;\n  y = a - 1;\n  answerCorrect = tables[x][y];\n}",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "Explanation: This function demonstrates the core logic for generating multiplication questions. It uses Math.random() to select two numbers (a and b) within a specified range (1-10 in this case) and then retrieves the correct answer from a pre-defined tables array.",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "textContent": "Handling User Input",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "JavaScript",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "code",
-        "language": "javascript",
-        "textContent": "function type() {\n  curVal = this.value;\n  if (answer.innerHTML === \"______\") {\n    answerTyped = curVal;\n  } else {\n    answerTyped = answerTyped + curVal;\n  }\n  answer.innerHTML = answerTyped;\n}\n\ndocument.querySelectorAll('.number').forEach(button => {\n  button.onclick = type;\n});\n\ndocument.getElementById(\"btnClear\").onclick = clearAnswer;\ndocument.getElementById(\"btnGo\").onclick = go;",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "Handling user input from the number buttons. The type() function appends the clicked number to the answerTyped variable, which is then displayed in the answer area. QuerySelectorAll is used to efficiently attach event listeners to multiple buttons, and separate event listeners for the Clear and Go buttons.",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "textContent": "Answer Checking Logic",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "JavaScript",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "code",
-        "language": "javascript",
-        "textContent": "function checkAnswer() {\n  answerTyped = Number(answerTyped);\n  answerAttempt =+ 1;\n  answerIsCorrect = answerTyped === answerCorrect ? true : false;\n  if (answerIsCorrect === true) {\n    btnGo.innerHTML = \"YES!<br> Next\";\n  } else {\n    btnGo.innerHTML = \"Nope. <br> Try again!\";\n  }\n}",
-        "date": null,
-        "status": "draft"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "This function converts the user's input to a number and compares it to the answerCorrect. It updates the button text based on whether the answer is correct or not",
-        "date": null,
-        "status": "draft"
+        "type": "image",
+        "src": "assets/images/mathine-console-20250206.webp",
+        "alt": "Beer Mat Styling",
+        "caption": "Beer Mat Styling",
+        "aria-label": "text description aria label",
+        "date": "2025-01-29",
+        "status": "published"
       }
-    ]
+    ],
+    "media": {
+      "images": []
+    }
   },
   {
     "id": 1,
     "title": "Understanding Flexbox",
     "slug": "understanding-flexbox",
+    "shortDescription": "",
     "description": "Learn how Flexbox works in CSS.",
     "category": "css",
     "tags": ["CSS", "Flexbox"],

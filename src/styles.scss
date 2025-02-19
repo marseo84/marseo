@@ -71,6 +71,8 @@ html {
 
 .page-wrapper {
   padding: 4em 1em;
+  min-height: 90vh;
+  // overflow-x: hidden;
 }
 
 .section-intro {

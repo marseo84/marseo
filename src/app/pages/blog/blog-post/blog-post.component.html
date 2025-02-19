@@ -2,11 +2,10 @@
   <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
     <!-- content header & outline - column 1  -->
     <div class="col-span-1 lg:sticky lg:top-20 self-start">
-      <!-- content header & outline - column 1  -->
       <div class="project-details" *ngIf="post">
         <!-- Title and Description -->
         <h1 class="text-4xl font-bold">{{ post.title }}</h1>
-        <p class="mt-2 text-lg">{{ post.description }}</p>
+        <p class="mt-2 text-lg">{{ post.shortDescription }}</p>
 
         <!-- Tags -->
         <div class="tags mt-4 flex flex-wrap gap-2">
@@ -59,10 +58,10 @@
         class="scroll-buttons flex mt-4 gap-2 flex-wrap sticky top-0 sm:left-0 sm:w-full sm:shadow-md"
       >
         <button
-          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded"
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           (click)="scrollTo('media-carousel')"
         >
-          About post
+          [TOP]
         </button>
 
         <!-- <ng-container *ngIf="project?.codeSnippets?.length > 0"> -->
@@ -80,8 +79,8 @@
     <!-- col 2 & 3 - main content-->
     <div class="col-span-2">
       <!-- Media Carousel Section -->
-      <!-- <div id="media-carousel" class="media-gallery mt-6">
-        <app-swiper-slider
+      <div id="media-carousel" class="media-gallery mt-6">
+        <!-- <app-swiper-slider
           [images]="post?.media?.images"
           [swiperOptions]="{
         slidesPerView: 3,
@@ -96,12 +95,12 @@
           prevEl: '.swiper-button-prev',
         },
       }"
-        ></app-swiper-slider>
-      </div> -->
+        ></app-swiper-slider> -->
+      </div>
 
       <!-- post section -->
       <div class="mt-6" id="about-project">
-        <h2 class="text-4xl">About the Project</h2>
+        <h2 class="text-4xl">Introduction</h2>
         <!-- <div *ngIf="project?.content && project.content; instanceof: Array"> -->
         <div *ngFor="let item of post?.content">
           <!-- headings -->
@@ -120,7 +119,9 @@
           </h3>
 
           <!-- paragraphs -->
-          <p *ngIf="item.type === 'paragraph'">{{ item.textContent ?? "" }}</p>
+          <p *ngIf="item.type === 'paragraph'" class="mt-2">
+            {{ item.textContent ?? "" }}
+          </p>
 
           <!-- lists -->
           <ol *ngIf="item.type === 'list' && item.listType === 'ordered'">
@@ -135,11 +136,25 @@
             </li>
           </ul>
 
+          <!-- Ordered Lists -->
+          <!-- <ol *ngIf="item.type === 'list' && item.listType === 'ordered'">
+  <li *ngFor="let listItem of (item.textContent || [])">
+    {{ listItem }}
+  </li>
+</ol> -->
+          <!-- Unordered Lists -->
+          <!-- <ul *ngIf="item.type === 'list' && item.listType === 'unordered'">
+  <li *ngFor="let listItem of (item.textContent || [])">
+    {{ listItem }}
+  </li>
+</ul> -->
+
           <!-- image -->
           <img
             *ngIf="item.type === 'image'"
             [src]="item.src"
             [alt]="item.alt ?? ''"
+            class="rounded my-6"
           />
           <p *ngIf="item.type === 'image' && item.caption">
             {{ item.caption }}
@@ -149,12 +164,15 @@
       <!-- </div> -->
 
       <!-- Code Snippets Section -->
-      <!-- <div class="code-preview mt-6" *ngIf="post.codeSnippets.length > 0">
+      <div
+        class="code-preview mt-6"
+        *ngIf="(post?.codeSnippets?.length ?? 0) > 0"
+      >
         <h2 class="text-2xl font-semibold">Code Snippets</h2>
         <app-code-snippets
-          [codeSnippets]="post.codeSnippets"
+          [codeSnippets]="post?.codeSnippets ?? []"
         ></app-code-snippets>
-      </div> -->
+      </div>
 
       <!-- post conclusion -->
       <!-- <div *ngIf="post?.conclusion">
@@ -204,10 +222,10 @@
     <!-- search/filter - column 4 -->
     <div class="col-span-1 lg:sticky lg:top-20 self-start">
       <!-- <div class="col-span-1 lg:fixed lg:top-0 self-start"> -->
-      <div class="p-4 hidden md:flex bg-gray-500 rounded shadow">
-        <!-- Add filter/search content here -->
-        <p class="text-sm font-semibold">Filters/Search</p>
-      </div>
+      <!-- <div class="p-4 hidden md:flex bg-gray-500 rounded shadow"> -->
+      <!-- Add filter/search content here -->
+      <!-- <p class="text-sm font-semibold">Filters/Search</p> -->
+      <!-- </div> -->
     </div>
     <!-- </section> -->
     <!-- </div> -->

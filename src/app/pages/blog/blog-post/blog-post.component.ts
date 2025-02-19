@@ -7,6 +7,7 @@ import { BlogPostsService } from '../../../shared/services/blog-posts.service';
 import { SwiperSliderComponent } from '../../../components/swiper-slider/swiper-slider.component';
 import { CodeSnippetsComponent } from '../../../components/code-snippets/code-snippets.component';
 import { ScrollService } from '../../../shared/services/scroll.service';
+import { CodeSnippet } from '../../../models/components.interface';
 
 @Component({
   selector: 'app-blog-post',
@@ -18,8 +19,11 @@ import { ScrollService } from '../../../shared/services/scroll.service';
 })
 export class BlogPostComponent implements OnInit {
   @Input() post?: BlogPost;
+  @Input() codeSnippets: CodeSnippet[] = [];
+  @Input() activeSnippetIndex = 0;
+  @Input() selectSnippet!: (index: number) => void;
+
   // @Input() codeSnippets: any[] = [];
-  // @Input() codeSnippets: CodeSnippet[] = [];
   // @Input() mediaItems: MediaItem[] = [];
   // @Input() languages: Language[] = [];
   // @Input() contentItems: ContentItem[] = [];
