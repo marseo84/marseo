@@ -12,9 +12,8 @@ import {
 } from '@angular/core';
 import { CodeSnippet } from '../../models/components.interface';
 import { SafeHtmlPipe } from '../../shared/pipes/safe-html.pipe';
-import * as Prism from 'prismjs';
 
-// prism languages
+import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-css';

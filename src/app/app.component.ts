@@ -1,3 +1,9 @@
+// import Prism from 'prismjs';
+// import 'prismjs/components/prism-javascript';
+// import 'prismjs/components/prism-typescript';
+// import 'prismjs/components/prism-css';
+// import 'prismjs/components/prism-scss';
+// import 'prismjs/components/prism-php';
 // import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -15,13 +21,6 @@ import { FooterComponent } from './components/footer/footer.component';
 // import { HeroComponent } from './components/hero/hero.component';
 import { CtaComponent } from './components/cta/cta.component';
 import { HeroData, CtaData } from './models/components.interface';
-
-// prism
-// import * as Prism from 'prismjs';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-css';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -77,6 +76,6 @@ export class AppComponent implements OnInit {
         this.ctaData = data['cta'] || null;
       });
 
-    Prism.highlightAll();
+    // Prism.highlightAll();
   }
 }

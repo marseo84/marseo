@@ -11,7 +11,8 @@ import { FilterComponent } from '../../../components/filter/filter.component';
 
 @Component({
   selector: 'app-blog-home',
-  imports: [CommonModule, CardComponent, FilterComponent, FormsModule],
+  // imports: [CommonModule, CardComponent, FilterComponent, FormsModule],
+  imports: [CommonModule, CardComponent, FormsModule],
   templateUrl: './blog-home.component.html',
   styleUrl: './blog-home.component.scss',
   standalone: true,

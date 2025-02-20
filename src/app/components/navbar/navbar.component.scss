@@ -9,7 +9,7 @@
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-  background-color: $bg-5;
+  background-color: #100f0f;
   padding: 0.5rem;
   z-index: 1;
   transform: translateX(-100%);
@@ -26,7 +26,7 @@
     display: none; // Hide when toggler is clicked again.
   }
 
-  @media (min-width: $breakpoint) {
+  @media (min-width: 768px) {
     // display: grid;
     // grid-template-columns: repeat(4, 1fr);
     // gap: 1rem;
@@ -36,7 +36,7 @@
     width: 100%;
     padding: 0 1em;
     margin: 0;
-    background-color: $bg-5; // Adjust as needed.
+    background-color: #000000ff; // Adjust as needed.
   }
 
   .nav-item {
@@ -64,7 +64,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
 
-  @media (min-width: $breakpoint) {
+  @media (min-width: 768px) {
     display: none; // Hidden on larger screens.
   }
 }
