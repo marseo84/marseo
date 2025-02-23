@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 export class NavbarComponent implements OnInit {
   isNavbarOpen = false;
   isMobileView = false;
+
+  constructor(private router: Router) {}
 
   // Check window width to determine if it's mobile
   @HostListener('window:resize', ['$event'])
@@ -29,11 +31,23 @@ export class NavbarComponent implements OnInit {
   // Initial check on load
   ngOnInit() {
     this.onResize();
+
+    // close the sidebar when navigation occurs
+
+    this.router.events.subscribe(() => {
+      if (this.isMobileView) {
+        this.closeSidebar();
+      }
+    });
   }
 
   // Toggle navbar on smaller screens
   toggleNavbar() {
     this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
+  closeSidebar() {
+    this.isNavbarOpen = false;
   }
 
   // Helper function for template

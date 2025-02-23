@@ -1,11 +1,11 @@
-<div class="code-snippets p-6">
+<div class="code-snippets p-2 mb:p-4 lg:p-6 mt-2">
   <div
-    class="code-snippet-wrapper p-6 border-2 rounded"
+    class="code-snippet-wrapper p-2 mb:p-4 border-2 rounded"
     [id]="'snippet-' + i"
     *ngFor="let snippet of codeSnippets; let i = index"
   >
-    <h3 class="snippet-heading">{{ snippet.heading }}</h3>
-    <p class="snippet-description">{{ snippet.description }}</p>
+    <h3 class="snippet-heading mx-2">{{ snippet.heading }}</h3>
+    <p class="snippet-description mx-2">{{ snippet.description }}</p>
     <div class="snippet-result" *ngIf="snippet.resultImage">
       <img [src]="snippet.resultImage" [alt]="snippet.heading" />
     </div>

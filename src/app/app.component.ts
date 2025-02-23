@@ -12,6 +12,7 @@ import {
   Router,
   RouterModule,
   RouterOutlet,
+  // FontsAwesomeModule,
 } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { CommonModule } from '@angular/common';

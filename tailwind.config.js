@@ -20,6 +20,8 @@ module.exports = {
         warning: "#333",
         error: "#f8f8f8",
         info: "#333",
+        link_1: "#39AA93",
+        link_2: "#FF4400",
       },
 
       // Custom breakpoints

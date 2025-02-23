@@ -1,14 +1,190 @@
-<div class="container page-wrapper">
-  <app-hero
-    *ngIf="heroData"
-    [title]="heroData.title"
-    [subtitle]="heroData.subtitle"
-    [styleClass]="heroData.styleClass"
-  ></app-hero>
-  <section class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-    <div class="col-span-1">column</div>
-    <div class="col-span-1">column</div>
-    <div class="col-span-1">column</div>
-    <div class="col-span-1">column</div>
-  </section>
-</div>
+<!-- <div class="container page-wrapper"> -->
+<!-- <app-hero
+  *ngIf="heroData"
+  [title]="heroData.title"
+  [subtitle]="heroData.subtitle"
+  [styleClass]="heroData.styleClass"
+></app-hero> -->
+<section class="grid grid-cols-1 lg:grid-cols-4 mt-16 gap-6 items-start">
+  <!-- row 1 -->
+  <div class="col-span-1">
+    <div class="profile-image-wrapper">
+      <img
+        src="./assets/images/profile-man.jpg"
+        alt="Marcel Bošek"
+        class="w-full object-fit rounded"
+      />
+    </div>
+    <p class="text-2xl">Hi there,</p>
+    <p class="text-2xl font-bold">I am Marcel Bošek.</p>
+    <p class="text-2xl">I’m diving into web development.</p>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+
+  <!-- row 2 -->
+  <div class="col-span-1"></div>
+  <div class="col-span-1">
+    <h2 class="text-3xl font-bold mb-4">Seeds of Code</h2>
+    <p class="mb-2">These three key experiences led me to my coding journey:</p>
+    <ol>
+      <li class="mb-2">
+        1. Working as an SEO content manager in e-commerce, I saw firsthand the
+        results of coders' work and spent time alongside them.
+      </li>
+      <li class="mb-2">
+        2. Managing content led me to WordPress, and to satisfy my curiosity, I
+        began learning website creation through boluda.com.
+      </li>
+      <li class="mb-2">
+        3. At an Excel training, I was amazed by a demonstration of how to
+        automate tasks with macros and VBA. Seeing how a simple macro could
+        transform a sad emoji into a happy one and how little code was needed to
+        achieve results by cleaning up the VBA script ignited my interest in
+        programming logic.
+      </li>
+    </ol>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+
+  <!-- row 3 -->
+  <div class="col-span-1"></div>
+  <div class="col-span-1">
+    <h2 class="text-3xl font-bold mt-8 mb-4">Hitting the Code</h2>
+    <p class="mb-2">
+      This sparked my exploration of VBA and Apps Scripts. Simultaneously, I
+      wanted to break free from WordPress limitations and build custom websites,
+      so I began learning web development fundamentals.
+    </p>
+    <p class="mb-2">
+      I explored Responsive Web Design at freeCodeCamp, HTML and CSS at
+      boluda.com, Full Stack Web Development at Mimo.org, w3school courses and
+      various other online resources.
+    </p>
+    <p class="mb-2">
+      I enrolled in a Full Stack Web Developer Bootcamp at CodeFactory in
+      Vienna, significantly expanding my front-end knowledge and gaining
+      back-end skills.
+    </p>
+    <p class="mb-2">
+      I've been coding consistently since then. While working on various
+      projects, I've explored CSS animations and Tailwind CSS, but my primary
+      focus has been Angular. Next, I plan to delve deeper into Symfony.
+    </p>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+
+  <!-- row 4 -->
+  <div class="col-span-1"></div>
+  <div class="col-span-1">
+    <h2 class="text-3xl font-bold mt-8 mb-4">Snapshot of My Toolkit</h2>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+
+  <!-- row 5 -->
+
+  <div class="col-span-1"></div>
+  <div class="col-span-1">
+    <h3 class="text-2xl font-bold mb-2">Front-End</h3>
+    <ul class="text-2xl">
+      <li>HTML 5</li>
+      <li>CSS 3</li>
+      <li>SASS</li>
+      <li>TailwindCSS</li>
+      <li>Bootstrap</li>
+      <li>JavaScript</li>
+      <li>TypeScript</li>
+      <li>Angular</li>
+      <li>AJAX</li>
+      <li>API</li>
+    </ul>
+  </div>
+  <div class="col-span-1">
+    <h3 class="text-2xl font-bold mb-2">Back-End</h3>
+    <ul class="text-2xl">
+      <li>PHP</li>
+      <li>Symfony</li>
+      <li>MySQL</li>
+      <li>Database Development</li>
+      <li>API</li>
+      <li>WordPress</li>
+    </ul>
+  </div>
+  <div class="col-span-1">
+    <h3 class="text-2xl font-bold mb-2">Additional Skills</h3>
+    <h4 class="text-xl font-bold mt-2">Data Analysis</h4>
+    <ul class="text-2xl">
+      <li>Excel</li>
+      <li>Power BI</li>
+      <li>Tableau</li>
+      <li>Looker Studio</li>
+      <li>Adobe Analytics</li>
+    </ul>
+
+    <h4 class="text-xl font-bold mt-2">Automation</h4>
+    <ul class="text-2xl">
+      <li>Excel VBA</li>
+      <li>Apps Script</li>
+    </ul>
+
+    <h4 class="text-xl font-bold mt-2">Workflow</h4>
+    <ul class="text-2xl">
+      <li>Scrum</li>
+      <li>Kanban</li>
+    </ul>
+
+    <h4 class="text-xl font-bold mt-2">Design</h4>
+    <ul class="text-2xl">
+      <li>Figma</li>
+      <li>Adobe Illustrator</li>
+    </ul>
+  </div>
+
+  <!-- row 7 -->
+
+  <div class="col-span-1"></div>
+  <div class="col-span-1">
+    <h2 class="text-3xl font-bold mt-6 mb-4">When I am Not Coding</h2>
+    <p class="">
+      <span class="font-bold">If you see</span> a small white dog enjoying a
+      bike ride in a rear basket,
+    </p>
+    <p class="mb-2">
+      if you see a tandem with a child trailer loaded with picnic gear,
+    </p>
+    <p class="mb-2">
+      or if you see a guy with headphones nodding his head to the beat while
+      walking a little white doggie,
+    </p>
+    <p class="mb-4">That’s likely me.</p>
+
+    <p class="mb-2">
+      <span class="font-bold">If you can't see me</span>, I'm likely coding,
+      reading, or jotting down notes.
+    </p>
+    <p class="mb-2">
+      Or, I might be experimenting with AI illustration tools for my
+      language-learning projects.
+    </p>
+    <p class="mt-4">
+      These are some of the things that keep me balanced and inspired.
+    </p>
+  </div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+
+  <!-- row 8 -->
+
+  <h2 class="text-3xl font-bold mb-4"></h2>
+  <p class="mb-2"></p>
+
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+  <div class="col-span-1"></div>
+</section>
+<!-- </div> -->

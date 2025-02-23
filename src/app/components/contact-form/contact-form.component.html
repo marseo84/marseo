@@ -1,1 +1,87 @@
-<p>contact-form works!</p>
+<form
+  action="https://formspree.io/f/xqaejwez"
+  method="POST"
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  class="contact-form border-primary-bg p-6 mb-16 rounded-md w-[95vw] md:w-[80vw] lg:w-[50vw] max-w-xl"
+>
+  <div class="form-section mb-4">
+    <label class="form-label block text-sm font-medium mb-1" for="name">
+      Name:
+    </label>
+    <input
+      id="name"
+      formControlName="name"
+      name="name"
+      type="text"
+      class="text-gray-950 w-full rounded-md p-2 border border-primary-bg"
+      placeholder="Jane Doe"
+      required
+    />
+    <div
+      *ngIf="
+        contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+      "
+      class="form-error text-red-500 text-sm mt-1"
+    >
+      Name is required.
+    </div>
+  </div>
+
+  <div class="form-section mb-4">
+    <label class="form-label block text-sm font-medium mb-1" for="email"
+      >Email:</label
+    >
+    <input
+      id="email"
+      formControlName="email"
+      name="email"
+      type="email"
+      class="text-gray-950 w-full rounded-md p-2 border border-primary-bg"
+      placeholder="email@jane.com"
+      required
+    />
+    <div
+      *ngIf="
+        contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+      "
+      class="form-error text-red-500 text-sm mt-1"
+    >
+      A valid email is required.
+    </div>
+  </div>
+
+  <div class="form-section mb-4">
+    <label class="form-label block text-sm font-medium mb-1" for="message">
+      Message:</label
+    >
+    <textarea
+      id="message"
+      formControlName="message"
+      name="message"
+      class="text-gray-950 w-full rounded-md p-2 border border-primary-bg"
+      placeholder="Dear Marcel, ..."
+      required
+      rows="4"
+    ></textarea>
+    <div
+      *ngIf="
+        contactForm.get('message')?.invalid &&
+        contactForm.get('message')?.touched
+      "
+      class="form-error text-red-500 text-sm mt-1"
+    >
+      Message is required.
+    </div>
+  </div>
+
+  <div class="submit-btn-wrapper flex justify-center">
+    <button
+      type="submit"
+      class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 transition-colors duration-200 cursor-pointer"
+      [disabled]="contactForm.invalid"
+    >
+      Send
+    </button>
+  </div>
+</form>

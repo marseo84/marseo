@@ -1,5 +1,5 @@
 <div
-  class="card col-span-1 row-span-1 flex flex-col h-full border rounded-md p-4 shadow-md"
+  class="card col-span-1 row-span-1 flex flex-col border rounded-md p-2 md:p-4 shadow-md"
 >
   <!-- Render Code Image -->
   <!-- <div *ngIf="codeImage"> -->
@@ -13,16 +13,19 @@
   <!-- </div> -->
 
   <div class="card-title-wrapper">
-    <h3 class="text-2xl font-bold flex-shrink-0 line-clamp-2">
+    <h3 class="text-2xl font-bold line-clamp-2">
+      <!-- <h3 class="text-2xl font-bold flex-shrink-0 line-clamp-2"> -->
       {{ title }}
     </h3>
   </div>
-  <div class="card-description-wrapper flex-shrink-0">
+  <div class="card-description-wrapper">
+    <!-- <div class="card-description-wrapper flex-shrink-0"> -->
     <p class="text-sm line-clamp-3">{{ description }}</p>
   </div>
 
   <!-- Tags -->
-  <div class="card-tags-wrapper flex-shrink-0">
+  <div class="card-tags-wrapper">
+    <!-- <div class="card-tags-wrapper flex-shrink-0"> -->
     <div class="tags text-sm" *ngIf="(tags?.length || 0) > 0">
       <span *ngFor="let tag of tags">{{ tag }}</span>
     </div>

@@ -1,81 +1,27 @@
-// @import "../../../styles/variables";
-
-// .example-class {
-//   color: $primary-color;
-//   background-color: $background-color;
-// }
-
 .section-intro {
   margin-bottom: 5rem;
-  // @media (min-width: $breakpoint) {
-  //   margin-bottom: 43vh;
+
+  // @media (min-width: 768px) {
+  //   margin-bottom: 5rem;
   // }
 }
-
-// .section-grid {
-//   padding: 2rem 1rem;
-//   scroll-padding-top: 55rem; /* Adjust for sticky headings */
-// }
 
 .section-heading-home {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  // font-size: 2.5rem;
 }
 
-// .see-more-btn {
-//   font-size: 1rem;
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   color: #333;
-//   text-decoration: none;
-//   transition: all 0.3s ease;
+// .card-cols {
+//   padding-bottom: 70dvh;
 // }
-
-// .see-more-btn:hover {
-//   color: orangered;
-// }
-
-// .see-more-btn .arrow-lg {
-//   display: inline-block;
-//   width: 16px;
-//   height: 16px;
-//   border-right: 2px solid #333;
-//   border-top: 2px solid #333;
-//   transform: rotate(45deg);
-//   transition: all 0.3s ease;
-// }
-
-// .see-more-btn:hover .arrow-lg {
-//   border-color: orangered;
-//   transform: rotate(45deg) translateX(2px);
-// }
-
-// .sticky {
-//   position: sticky;
-// }
-
-.card-cols {
-  padding-bottom: 70dvh;
-}
 
 // @media (max-width: 768px) {
 @media (max-width: 481px) {
-  // .section-home {
-  //   display: block;
-  // }
-
   .section-heading-home {
     writing-mode: horizontal-tb;
     text-orientation: unset;
     margin-bottom: 1rem;
-    // text-align: center;
   }
-
-  // .see-more-btn {
-  //   justify-content: center;
-  //   margin-top: 2rem;
-  // }
 
   .grid-cols-1 {
     grid-template-columns: 1fr;
