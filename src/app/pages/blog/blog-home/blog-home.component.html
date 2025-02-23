@@ -1,14 +1,16 @@
 <div class="page-wrapper">
-  <div class="filters-wrapper">
-    <!-- Search Input -->
-    <!-- <input
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <!-- search/filter column -->
+    <div class="col-span-1 lg:sticky lg:top-0 self-start">
+      <!-- Search Input -->
+      <!-- <input
       [(ngModel)]="searchTerm"
       (input)="onSearchTermChange(searchTerm)"
       placeholder="Search Blog Posts"
     /> -->
 
-    <!-- Category Filter -->
-    <!-- <div class="category-filter">
+      <!-- Category Filter -->
+      <!-- <div class="category-filter">
       <button
         *ngFor="let category of categories"
         (click)="filterByCategory(category)"
@@ -18,8 +20,8 @@
       </button>
     </div> -->
 
-    <!-- Tag Filter -->
-    <!-- <div class="tag-filter">
+      <!-- Tag Filter -->
+      <!-- <div class="tag-filter">
       <button
         *ngFor="let tag of tags"
         (click)="filterByTag(tag)"
@@ -29,8 +31,8 @@
       </button>
     </div> -->
 
-    <!-- Sorting Dropdown -->
-    <!-- <div class="sort-filter">
+      <!-- Sorting Dropdown -->
+      <!-- <div class="sort-filter">
       <label for="sort">Sort By:</label>
       <select id="sort" [(ngModel)]="sortBy" (change)="onSortChange(sortBy)">
         <option value="date">Date</option>
@@ -38,24 +40,13 @@
         <option value="popularity">Popularity</option>
       </select>
     </div> -->
-  </div>
-
-  <!-- GRID - START -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
-    <!-- search/filter column -->
-    <div class="col-span-1 top-0 self-start">
-      <!-- <app-filter
-        [categories]="categories"
-        [tags]="tags"
-        (categorySelected)="filterByCategory($event)"
-        (tagSelected)="filterByTag($event)"
-        (searchTermChanged)="onSearchTermChange($event)"
-        (sortOptionChanged)="onSortChange($event)"
-      ></app-filter> -->
+      <!-- </div> -->
     </div>
 
     <!-- card columns -->
-    <div class="col-span-3 grid grid-cols-3 gap-4 card-cols">
+    <div
+      class="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
       <app-card
         *ngFor="let blog of filteredBlogPosts"
         [id]="blog.id"
@@ -74,7 +65,7 @@
 
     <!-- GRID - END -->
 
-    Blog Posts Grid
+    <!-- Blog Posts Grid -->
     <!-- <div class="blog-posts-grid">
       <app-blog-post
         *ngFor="let post of filteredPosts"
@@ -83,3 +74,4 @@
     </div> -->
   </div>
 </div>
+<!-- </div> -->

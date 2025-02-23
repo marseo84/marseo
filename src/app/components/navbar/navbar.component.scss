@@ -54,12 +54,13 @@
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
-  z-index: 2;
+  z-index: 5;
   // background-color: var(--tw-indigo-500);
-  color: white;
+  // color: white;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  // border: 1px solid white;
 
   @media (min-width: 768px) {
     display: none; // Hidden on larger screens.

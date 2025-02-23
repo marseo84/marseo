@@ -1,12 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
-// Import Tailwind's directives into your SCSS file
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// @import "./styles/variables";
-// @import "swiper/swiper-bundle.min.css";
 
 // RESET - START
 
@@ -15,6 +9,8 @@ body {
   // overflow-x: hidden;
   // width: 100%;
   margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
 }
 
 html {
@@ -23,15 +19,10 @@ html {
 
 * {
   box-sizing: border-box;
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 
 // RESET - END
-
-// .active {
-//   font-weight: bold;
-//   color: #007bff;
-// }
 
 // TEXT STYLES - START
 // .writing-mode-vertical {
@@ -40,16 +31,13 @@ html {
 // }
 
 .section-heading {
-  font-size: 3.5rem;
+  // font-size: 3.5rem;
   font-weight: bold;
   text-transform: uppercase;
   @media (min-width: 768px) {
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     text-align: center;
   }
-  // writing-mode: vertical-rl;
-  // text-orientation: mixed;
-  // padding-bottom: 5em;
 }
 
 // TEXT STYLES - END
@@ -59,24 +47,31 @@ html {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  // -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  // -webkit-line-clamp: 3;
   overflow: hidden;
 }
 
 .page-wrapper {
-  padding: 4em 1em;
-  min-height: 90vh;
+  margin: 0;
+  padding: 2em 0.5em;
+  min-height: 95dvh;
   // overflow-x: hidden;
 }
 
+@media only screen and (min-width: 486px) {
+  .page-wrapper {
+    padding: 4em 1em;
+  }
+}
+
 .component-wrapper {
+  padding: 0;
+  margin: 0;
 }
 
 .section-intro {
@@ -88,7 +83,7 @@ html {
 
 .section-grid {
   padding: 2rem 1rem;
-  scroll-padding-top: 55rem; /* Adjust for sticky headings */
+  scroll-padding-top: 55rem;
 }
 
 .sticky {

@@ -3,10 +3,10 @@
   <div
     *ngIf="isMobile()"
     [class.open]="isNavbarOpen"
-    class="navbar-toggler text-2xl"
+    class="navbar-toggler text-3xl font-bold rounded"
     (click)="toggleNavbar()"
   >
-    M
+    {{ isNavbarOpen ? "X" : "M" }}
   </div>
 
   <!-- Navigation -->

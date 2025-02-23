@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SkillsComponent } from '../../components/skills/skills.component';
 
 @Component({
   selector: 'app-about',
-  imports: [HeroComponent, CommonModule, RouterModule],
+  imports: [HeroComponent, CommonModule, RouterModule, SkillsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
   standalone: true,
