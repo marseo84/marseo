@@ -22,6 +22,8 @@ module.exports = {
         info: "#333",
         link_1: "#39AA93",
         link_2: "#FF4400",
+        link_3: "#F0003C",
+        link_3_dark: "#C5214A",
       },
 
       // Custom breakpoints
