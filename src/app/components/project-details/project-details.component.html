@@ -58,7 +58,7 @@
         class="scroll-buttons flex mt-4 gap-2 flex-wrap sticky top-0 sm:left-0 sm:w-full sm:shadow-md"
       >
         <button
-          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
           (click)="scrollTo('media-carousel')"
         >
           [TOP]
@@ -67,7 +67,7 @@
         <!-- <ng-container *ngIf="project?.codeSnippets?.length > 0"> -->
         <button
           *ngFor="let snippet of project.codeSnippets; let i = index"
-          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          class="scroll-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
           (click)="scrollTo('snippet-' + i)"
         >
           {{ snippet.heading }}
