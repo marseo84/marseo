@@ -1,195 +1,194 @@
-<!-- <div class="container page-wrapper"> -->
-<!-- <div class="container"> -->
-<app-hero
-  *ngIf="heroData"
-  [title]="heroData.title"
-  [subtitle]="heroData.subtitle"
-  [styleClass]="heroData.styleClass"
-></app-hero>
+<div class="page-wrapper">
+  <app-hero
+    *ngIf="heroData"
+    [title]="heroData.title"
+    [subtitle]="heroData.subtitle"
+    [styleClass]="heroData.styleClass"
+  ></app-hero>
 
-<!-- INTRO SECTION - START -->
-<section
-  class="section-intro grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
->
-  <!-- Left placeholder column -->
-  <div class="col-span-1"></div>
+  <!-- INTRO SECTION - START -->
+  <section
+    class="section-intro grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
+  >
+    <!-- Left placeholder column -->
+    <div class="col-span-1"></div>
 
-  <!-- hero content  -->
-  <div class="col-span-1 lg:col-span-2">
-    <p class="text-lg leading-relaxed">
-      because I code,<br />
-      because I love it,<br />
-      because I can make stuff...
-    </p>
-  </div>
+    <!-- hero content  -->
+    <div class="col-span-1 lg:col-span-2">
+      <p class="text-lg leading-relaxed">
+        because I code,<br />
+        because I love it,<br />
+        because I can make stuff...
+      </p>
+    </div>
 
-  <!-- Right placeholder column -->
-  <div class="col-span-1"></div>
-</section>
+    <!-- Right placeholder column -->
+    <div class="col-span-1"></div>
+  </section>
 
-<!-- INTRO SECTION - END -->
+  <!-- INTRO SECTION - END -->
 
-<!-- GRID - START -->
-<!-- <section
+  <!-- GRID - START -->
+  <!-- <section
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
   > -->
-<section
-  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
->
-  <!-- PROJECTS SECTION - START -->
-  <div class="col-span-1 lg:col-span-1 section-grid">
-    <h2 class="section-heading section-heading-home">Projects</h2>
-    <!-- See More Button - desktop-->
-    <div class="hidden sm:flex justify-start mt-8">
-      <a
-        routerLink="/projects"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Projects"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
+  <section
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
+  >
+    <!-- PROJECTS SECTION - START -->
+    <div class="col-span-1 lg:col-span-1 section-grid">
+      <h2 class="section-heading section-heading-home">Projects</h2>
+      <!-- See More Button - desktop-->
+      <div class="hidden sm:flex justify-start mt-8">
+        <a
+          routerLink="/projects"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Projects"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
     </div>
-  </div>
-  <!-- 
+    <!-- 
     <div
       class="col-span-1 sm:col-span-2 lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 card-cols"
     > -->
-  <div
-    class="col-span-1 lg:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 card-cols"
-  >
-    <ng-container *ngIf="featuredProjects.length; else loading">
-      <app-card
-        *ngFor="let project of featuredProjects; else: loading"
-        [id]="project.id"
-        [codeImage]="project.codeImage"
-        [tags]="project.tags"
-        [title]="project.title"
-        [description]="project.description"
-        [slug]="project.slug"
-        [type]="'project'"
-      ></app-card>
-    </ng-container>
+    <div
+      class="col-span-1 lg:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 card-cols"
+    >
+      <ng-container *ngIf="featuredProjects.length; else loading">
+        <app-card
+          *ngFor="let project of featuredProjects; else: loading"
+          [id]="project.id"
+          [codeImage]="project.codeImage"
+          [tags]="project.tags"
+          [title]="project.title"
+          [description]="project.description"
+          [slug]="project.slug"
+          [type]="'project'"
+        ></app-card>
+      </ng-container>
 
-    <!-- See More Button - mobile -->
-    <div class="flex sm:hidden justify-start mt-8">
-      <a
-        routerLink="/projects"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Projects"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
+      <!-- See More Button - mobile -->
+      <div class="flex sm:hidden justify-start mt-8">
+        <a
+          routerLink="/projects"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Projects"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
+
+      <ng-template #loading>
+        <div class="placeholder-card">Loading...</div>
+      </ng-template>
+    </div>
+    <!-- PROJECTS SECTION - END -->
+
+    <!-- BLOG SECTION - START -->
+    <div class="col-span-1 lg:col-span-1 section-grid">
+      <h2 class="section-heading section-heading-home">Blog Posts</h2>
+      <!-- See More Button - desktop -->
+      <div class="hidden sm:flex justify-start mt-8">
+        <a
+          routerLink="/blog"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Blog Posts"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
     </div>
 
-    <ng-template #loading>
-      <div class="placeholder-card">Loading...</div>
-    </ng-template>
-  </div>
-  <!-- PROJECTS SECTION - END -->
+    <div
+      class="col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 card-cols"
+    >
+      <ng-container *ngIf="latestBlogPosts.length; else loading">
+        <app-card
+          *ngFor="let blog of latestBlogPosts; else: loading"
+          [id]="blog.id"
+          [codeImage]="blog.codeImage"
+          [tags]="blog.tags"
+          [title]="blog.title"
+          [description]="blog.description"
+          [slug]="blog.slug"
+          [category]="blog.category"
+          [type]="'blog'"
+        ></app-card>
+      </ng-container>
 
-  <!-- BLOG SECTION - START -->
-  <div class="col-span-1 lg:col-span-1 section-grid">
-    <h2 class="section-heading section-heading-home">Blog Posts</h2>
-    <!-- See More Button - desktop -->
-    <div class="hidden sm:flex justify-start mt-8">
-      <a
-        routerLink="/blog"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Blog Posts"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
+      <!-- See More Button - mobile -->
+      <div class="flex sm:hidden justify-start mt-8">
+        <a
+          routerLink="/blog"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Blog Posts"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
+
+      <ng-template #loading>
+        <div class="placeholder-card">Loading...</div>
+      </ng-template>
     </div>
-  </div>
+    <!-- BLOG SECTION - END -->
 
-  <div
-    class="col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 card-cols"
-  >
-    <ng-container *ngIf="latestBlogPosts.length; else loading">
-      <app-card
-        *ngFor="let blog of latestBlogPosts; else: loading"
-        [id]="blog.id"
-        [codeImage]="blog.codeImage"
-        [tags]="blog.tags"
-        [title]="blog.title"
-        [description]="blog.description"
-        [slug]="blog.slug"
-        [category]="blog.category"
-        [type]="'blog'"
-      ></app-card>
-    </ng-container>
-
-    <!-- See More Button - mobile -->
-    <div class="flex sm:hidden justify-start mt-8">
-      <a
-        routerLink="/blog"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Blog Posts"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
-    </div>
-
-    <ng-template #loading>
-      <div class="placeholder-card">Loading...</div>
-    </ng-template>
-  </div>
-  <!-- BLOG SECTION - END -->
-
-  <!-- CODEGNETTES SECTION - START -->
-  <div class="col-span-1 lg:col-span-1 section-grid">
-    <h2 class="section-heading section-heading-home">Codegnettes</h2>
-    <!-- See More Button - desktop -->
-    <div class="hidden sm:flex justify-start mt-8">
-      <a
-        routerLink="/codegnettes"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Codegnettes"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
-    </div>
-  </div>
-
-  <div
-    class="col-span-1 sm:col-span-2 lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 card-cols"
-  >
-    <ng-container *ngIf="latestCodegnettes.length; else loading">
-      <app-card
-        *ngFor="let snippet of latestCodegnettes; else: loading"
-        [id]="snippet.id"
-        [codeImage]="snippet.codeImage"
-        [tags]="snippet.tags"
-        [title]="snippet.title"
-        [description]="snippet.description"
-        [slug]="snippet.slug"
-        [type]="'codegnette'"
-      ></app-card>
-    </ng-container>
-
-    <!-- See More Button - desktop -->
-    <div class="flex sm:hidden justify-start mt-8">
-      <a
-        routerLink="/codegnettes"
-        class="see-more-btn flex items-center gap-2"
-        aria-label="See All Codegnettes"
-      >
-        <span>See All</span>
-        <div class="arrow"></div>
-      </a>
+    <!-- CODEGNETTES SECTION - START -->
+    <div class="col-span-1 lg:col-span-1 section-grid">
+      <h2 class="section-heading section-heading-home">Codegnettes</h2>
+      <!-- See More Button - desktop -->
+      <div class="hidden sm:flex justify-start mt-8">
+        <a
+          routerLink="/codegnettes"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Codegnettes"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
     </div>
 
-    <ng-template #loading>
-      <div class="placeholder-card">Loading...</div>
-    </ng-template>
-  </div>
-  <!-- CODEGNETTES SECTION - END -->
-</section>
-<!-- </div> -->
+    <div
+      class="col-span-1 sm:col-span-2 lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 card-cols"
+    >
+      <ng-container *ngIf="latestCodegnettes.length; else loading">
+        <app-card
+          *ngFor="let snippet of latestCodegnettes; else: loading"
+          [id]="snippet.id"
+          [codeImage]="snippet.codeImage"
+          [tags]="snippet.tags"
+          [title]="snippet.title"
+          [description]="snippet.description"
+          [slug]="snippet.slug"
+          [type]="'codegnette'"
+        ></app-card>
+      </ng-container>
+
+      <!-- See More Button - desktop -->
+      <div class="flex sm:hidden justify-start mt-8">
+        <a
+          routerLink="/codegnettes"
+          class="see-more-btn flex items-center gap-2"
+          aria-label="See All Codegnettes"
+        >
+          <span>See All</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
+
+      <ng-template #loading>
+        <div class="placeholder-card">Loading...</div>
+      </ng-template>
+    </div>
+    <!-- CODEGNETTES SECTION - END -->
+  </section>
+</div>
 
 <!-- GRID - END -->

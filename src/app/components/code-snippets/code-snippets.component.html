@@ -1,18 +1,22 @@
-<div class="code-snippets p-2 mb:p-4 lg:p-6 mt-2">
-  <div
-    class="code-snippet-wrapper p-2 mb:p-4 border-2 rounded"
-    [id]="'snippet-' + i"
-    *ngFor="let snippet of codeSnippets; let i = index"
-  >
-    <h3 class="snippet-heading mx-2">{{ snippet.heading }}</h3>
-    <p class="snippet-description mx-2">{{ snippet.description }}</p>
-    <div class="snippet-result" *ngIf="snippet.resultImage">
-      <img [src]="snippet.resultImage" [alt]="snippet.heading" />
-    </div>
-    <div class="code-block-wrapper">
-      <div class="language-section" *ngFor="let language of snippet.languages">
-        <h4>{{ language.language.toUpperCase() }}</h4>
-        <pre>
+<div class="component-wrapper">
+  <div class="code-snippets p-2 mb:p-4 lg:p-6 mt-2">
+    <div
+      class="code-snippet-wrapper p-2 mb:p-4 border-2 rounded"
+      [id]="'snippet-' + i"
+      *ngFor="let snippet of codeSnippets; let i = index"
+    >
+      <h3 class="snippet-heading mx-2">{{ snippet.heading }}</h3>
+      <p class="snippet-description mx-2">{{ snippet.description }}</p>
+      <div class="snippet-result" *ngIf="snippet.resultImage">
+        <img [src]="snippet.resultImage" [alt]="snippet.heading" />
+      </div>
+      <div class="code-block-wrapper">
+        <div
+          class="language-section"
+          *ngFor="let language of snippet.languages"
+        >
+          <h4>{{ language.language.toUpperCase() }}</h4>
+          <pre>
           <code
           #codeElement
         [class]="'language-' + language.language"
@@ -20,8 +24,9 @@
         >
         </code>
       </pre>
+        </div>
       </div>
+      <p class="snippet-notes italic">{{ snippet?.notes }}</p>
     </div>
-    <p class="snippet-notes italic">{{ snippet?.notes }}</p>
   </div>
 </div>

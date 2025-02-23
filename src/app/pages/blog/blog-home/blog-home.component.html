@@ -1,4 +1,4 @@
-<div class="container page-wrapper">
+<div class="page-wrapper">
   <div class="filters-wrapper">
     <!-- Search Input -->
     <!-- <input
@@ -41,9 +41,7 @@
   </div>
 
   <!-- GRID - START -->
-  <section
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start"
-  >
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
     <!-- search/filter column -->
     <div class="col-span-1 top-0 self-start">
       <!-- <app-filter
@@ -76,12 +74,12 @@
 
     <!-- GRID - END -->
 
-    <!-- Blog Posts Grid -->
+    Blog Posts Grid
     <!-- <div class="blog-posts-grid">
-  <app-blog-post
-    *ngFor="let post of filteredPosts"
-    [post]="post"
-  ></app-blog-post>
-</div> -->
-  </section>
+      <app-blog-post
+        *ngFor="let post of filteredPosts"
+        [post]="post"
+      ></app-blog-post>
+    </div> -->
+  </div>
 </div>

@@ -1,31 +1,30 @@
-<!-- class="section-cta grid grid-cols-2 gap-4 items-start" -->
+<div class="component-wrapper">
+  <div
+    class="section-cta grid grid-cols-4 gap-4 items-start"
+    [ngClass]="styleClass"
+  >
+    <div class="col-span-1 self-start">
+      <p class="cta-tagline text-7xl md:text-9xl mb-10">
+        {{ ctaTaglinePrimary }}
+      </p>
+    </div>
+    <div class="col-span-1 self-start"></div>
+    <div class="col-span-1 self-start"></div>
+    <div class="col-span-1 self-start"></div>
 
-<section
-  class="section-cta grid grid-cols-4 gap-4 items-start"
-  [ngClass]="styleClass"
->
-  <div class="col-span-1 self-start">
-    <p class="cta-tagline text-7xl md:text-9xl mb-10">
-      {{ ctaTaglinePrimary }}
-    </p>
-  </div>
-  <div class="col-span-1 self-start"></div>
-  <div class="col-span-1 self-start"></div>
-  <div class="col-span-1 self-start"></div>
+    <div class="col-span-4 md:col-span-1">
+      <a
+        [routerLink]="ctaBtnPrimaryLink"
+        class="cta-btn cta-btn-primary pushable"
+      >
+        <span class="shadow"></span>
+        <span class="edge-red"></span>
+        <span class="front-red text-center">{{ ctaBtnPrimary }}</span>
+      </a>
+    </div>
 
-  <div class="col-span-4 md:col-span-1">
-    <a
-      [routerLink]="ctaBtnPrimaryLink"
-      class="cta-btn cta-btn-primary pushable"
-    >
-      <span class="shadow"></span>
-      <span class="edge-red"></span>
-      <span class="front-red text-center">{{ ctaBtnPrimary }}</span>
-    </a>
-  </div>
-
-  <div class="col-span-1 self-start">
-    <!-- <a
+    <div class="col-span-1 self-start">
+      <!-- <a
       [routerLink]="ctaBtnPrimaryLink"
       class="cta-btn cta-btn-primary pushable"
     >
@@ -33,21 +32,22 @@
       <span class="edge"></span>
       <span class="front text-center">{{ ctaBtnPrimary }}</span>
     </a> -->
-  </div>
-  <div class="col-span-1"></div>
-  <div
-    *ngIf="ctaTaglineSecondary || ctaBtnSecondary"
-    class="col-span-2 self-end"
-  >
-    <p class="cta-tagline-secondary text-2xl">{{ ctaTaglineSecondary }}</p>
-  </div>
-  <div *ngIf="ctaBtnSecondary" class="col-span-1 self-end mt-8">
-    <a
-      *ngIf="ctaBtnSecondary"
-      [routerLink]="ctaBtnSecondaryLink"
-      class="cta-btn cta-btn-secondary"
+    </div>
+    <div class="col-span-1"></div>
+    <div
+      *ngIf="ctaTaglineSecondary || ctaBtnSecondary"
+      class="col-span-2 self-end"
     >
-      {{ ctaBtnSecondary }}
-    </a>
+      <p class="cta-tagline-secondary text-2xl">{{ ctaTaglineSecondary }}</p>
+    </div>
+    <div *ngIf="ctaBtnSecondary" class="col-span-1 self-end mt-8">
+      <a
+        *ngIf="ctaBtnSecondary"
+        [routerLink]="ctaBtnSecondaryLink"
+        class="cta-btn cta-btn-secondary"
+      >
+        {{ ctaBtnSecondary }}
+      </a>
+    </div>
   </div>
-</section>
+</div>

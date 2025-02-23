@@ -23,7 +23,7 @@ html {
 
 * {
   box-sizing: border-box;
-  // outline: 1px solid red;
+  outline: 1px solid red;
 }
 
 // RESET - END
@@ -74,6 +74,9 @@ html {
   padding: 4em 1em;
   min-height: 90vh;
   // overflow-x: hidden;
+}
+
+.component-wrapper {
 }
 
 .section-intro {

@@ -1,41 +1,43 @@
-<div
-  class="card col-span-1 row-span-1 flex flex-col border rounded-md p-2 md:p-4 shadow-md"
->
-  <!-- Render Code Image -->
-  <!-- <div *ngIf="codeImage"> -->
-  <!-- <div class="code-preview"> -->
-  <!-- HTML -->
-  <!-- <div *ngIf="codeImage.html" [innerHTML]="codeImage.html"></div> -->
+<div class="component-wrapper">
+  <div
+    class="card col-span-1 row-span-1 flex flex-col border rounded-md p-2 md:p-4 shadow-md"
+  >
+    <!-- Render Code Image -->
+    <!-- <div *ngIf="codeImage"> -->
+    <!-- <div class="code-preview"> -->
+    <!-- HTML -->
+    <!-- <div *ngIf="codeImage.html" [innerHTML]="codeImage.html"></div> -->
 
-  <!-- SVG -->
-  <!-- <div *ngIf="codeImage.svg" [innerHTML]="codeImage.svg"></div> -->
-  <!-- </div> -->
-  <!-- </div> -->
+    <!-- SVG -->
+    <!-- <div *ngIf="codeImage.svg" [innerHTML]="codeImage.svg"></div> -->
+    <!-- </div> -->
+    <!-- </div> -->
 
-  <div class="card-title-wrapper">
-    <h3 class="text-2xl font-bold line-clamp-2">
-      <!-- <h3 class="text-2xl font-bold flex-shrink-0 line-clamp-2"> -->
-      {{ title }}
-    </h3>
-  </div>
-  <div class="card-description-wrapper">
-    <!-- <div class="card-description-wrapper flex-shrink-0"> -->
-    <p class="text-sm line-clamp-3">{{ description }}</p>
-  </div>
-
-  <!-- Tags -->
-  <div class="card-tags-wrapper">
-    <!-- <div class="card-tags-wrapper flex-shrink-0"> -->
-    <div class="tags text-sm" *ngIf="(tags?.length || 0) > 0">
-      <span *ngFor="let tag of tags">{{ tag }}</span>
+    <div class="card-title-wrapper">
+      <h3 class="text-2xl font-bold line-clamp-2">
+        <!-- <h3 class="text-2xl font-bold flex-shrink-0 line-clamp-2"> -->
+        {{ title }}
+      </h3>
     </div>
-  </div>
+    <div class="card-description-wrapper">
+      <!-- <div class="card-description-wrapper flex-shrink-0"> -->
+      <p class="text-sm line-clamp-3">{{ description }}</p>
+    </div>
 
-  <!-- <div [routerLink]="['/projects', id.toString()]" class="details-btn">
+    <!-- Tags -->
+    <div class="card-tags-wrapper">
+      <!-- <div class="card-tags-wrapper flex-shrink-0"> -->
+      <div class="tags text-sm" *ngIf="(tags?.length || 0) > 0">
+        <span *ngFor="let tag of tags">{{ tag }}</span>
+      </div>
+    </div>
+
+    <!-- <div [routerLink]="['/projects', id.toString()]" class="details-btn">
     <span class="">See more</span>
     <span class="arrow"></span>
   </div> -->
-  <div class="card-btn-wrapper">
-    <a [routerLink]="generateLink()" class="details-btn">See more</a>
+    <div class="card-btn-wrapper">
+      <a [routerLink]="generateLink()" class="details-btn">See more</a>
+    </div>
   </div>
 </div>
