@@ -12,10 +12,10 @@ import {
   Router,
   RouterModule,
   RouterOutlet,
-  // FontsAwesomeModule,
+  Scroll,
 } from '@angular/router';
 import { filter, map } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -63,7 +63,11 @@ export class AppComponent implements OnInit {
   heroData: HeroData | null = null;
   ctaData: CtaData | null = null;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   ngOnInit(): void {
     this.router.events
@@ -75,6 +79,16 @@ export class AppComponent implements OnInit {
       .subscribe((data) => {
         this.heroData = data['hero'] || null;
         this.ctaData = data['cta'] || null;
+      });
+
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe(() => {
+        this.viewportScroller.scrollToPosition([0, 0]);
       });
 
     // Prism.highlightAll();
