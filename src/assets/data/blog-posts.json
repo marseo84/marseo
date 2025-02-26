@@ -6,10 +6,10 @@
     "shortDescription": "Mathine is a fun and engaging web application designed to help kids learn and practice multiplication tables.",
     "description": "Mathine is a fun and engaging web application designed to help kids learn and practice multiplication tables. Inspired by the retro aesthetics of classic calculators and drum machines, Mathine offers a unique and visually appealing learning experience. This project is currently in its draft phase and is being actively developed.",
     "category": "javascript",
-    "tags": ["JavaScript", "Math", "Education", "Game"],
-    "featured": false,
-    "publishDate": null,
-    "lastUpdateDate": null,
+    "tags": ["JavaScript", "CSS"],
+    "featured": true,
+    "publishDate": "2025-02-26",
+    "lastUpdateDate": "2025-02-26",
     "popularity": 0,
     "languages": ["javascript"],
     "codeImage": [],
@@ -45,7 +45,7 @@
         ]
       }
     ],
-    "github": null,
+    "github": "https://github.com/marseo84/mathine-draft",
     "liveDemo": null,
     "content": [
       {
@@ -88,149 +88,243 @@
     }
   },
   {
-    "id": 1,
-    "title": "Understanding Flexbox",
-    "slug": "understanding-flexbox",
-    "shortDescription": "",
-    "description": "Learn how Flexbox works in CSS.",
-    "category": "css",
-    "tags": ["CSS", "Flexbox"],
-    "featured": false,
-    "publishDate": "2024-12-05",
-    "lastUpdateDate": "2024-12-15",
+    "id": 2,
+    "title": "Vanilla JavaScript Routing",
+    "slug": "vanilla-js-router",
+    "shortDescription": "A draft of a portfolio website with a single-page navigation built with Vanilla JavaScript.",
+    "description": "The portfolio website leverages Bootstrap for a responsive layout and features a custom-built, vanilla JavaScript router for smooth, single-page navigation. A key feature is its multilingual support, allowing users to browse the content in multiple languages. All website data, including project details and translations, is dynamically loaded from JSON files, making content management and updates efficient. The site also includes a dynamic project loading system, where project details are fetched and displayed only when a specific category is selected, improving initial page load performance.",
+    "category": "javascript",
+    "tags": ["JavaScript", "CSS", "Flexbox"],
+    "featured": true,
+    "publishDate": "2025-02-26",
+    "lastUpdateDate": "2025-02-26",
     "popularity": 95,
-    "languages": ["html", "css"],
+    "languages": ["html", "css", "javascript"],
     "codeImage": [
       {
-        "language": "html",
-        "code": "<div class='flex-container'><div>1</div><div>2</div><div>3</div></div>"
+        "language": "",
+        "code": ""
       },
       {
-        "language": "css",
-        "code": ".flex-container { display: flex; gap: 10px; }"
+        "language": "",
+        "code": ""
       }
     ],
     "codeSnippets": [
       {
-        "heading": "Basic Flexbox Example",
-        "description": "A simple example of Flexbox layout.",
+        "heading": "Client-Side Routing with Vanilla JavaScript",
+        "description": "This snippet showcases the core routing logic. navigateTo updates the URL and history, while loadRoute determines which page to display based on the current path. Event listeners on navigation links trigger the navigateTo function.",
         "languages": [
           {
-            "language": "html",
-            "code": "<div class='test'>test</div>"
-          },
+            "language": "javascript",
+            "code": "// router.js \n export function navigateTo(url) { \n     history.pushState({ path: currentPath }, &quot;&quot;, url); \n     loadRoute(); \n } \n  \n export function loadRoute() { \n     const pathSegments = window.location.pathname.split(&quot;/&quot;).filter(Boolean); \n     const pageKey =`/${currentLanguage}/${pathSegments.slice(1).join(&quot;/&quot;) || &quot;home&quot;}`; \n  \n     if (!routes[pageKey]) { \n         loadPageContent(currentLanguage, &quot;404&quot;); \n         return; \n     } \n     loadPageContent(currentLanguage, routes[pageKey]); \n } \n  \n // app.js \n document.querySelectorAll(&quot;a.nav-link&quot;).forEach((link) =&gt; { \n     link.addEventListener(&quot;click&quot;, (event) =&gt; { \n         event.preventDefault(); \n         navigateTo(event.target.getAttribute(&quot;href&quot;)); \n     }); \n }); \n "
+          }
+        ]
+      },
+      {
+        "heading": "Dynamic Content Loading from JSON",
+        "description": "Data is fetched from JSON files using fetch and then dynamically rendered into the page. The populateContainer function ensures that projects are only loaded when their respective category is selected and not loaded more than once. The data-loaded attribute is used to track the loading status of each project category.",
+        "languages": [
           {
-            "language": "css",
-            "code": ".flex-container { display: flex; justify-content: center; align-items: center; }"
+            "language": "javascript",
+            "code": "// projects.js \n export function loadProjects(category, containerId, lang) { \n     const dataFilePath = `../data/${category}.json`; \n     returnfetch(dataFilePath).then((response) =&gt; { \n         if (!response.ok) throw new Error(&quot;Failed to load data&quot;); \n         return response.json(); \n     }); \n } \n  \n function renderProjects(container, projects) { \n     container.innerHTML = projects \n         .map((project) =&gt; ` \n             &lt;div class=&quot;project-card&quot;&gt; \n                 &lt;img src=&quot;${project.image}&quot; alt=&quot;${project.title}&quot;&gt; \n                 &lt;h3&gt;${project.title}&lt;/h3&gt; \n                 &lt;p&gt;${project.description}&lt;/p&gt; \n             &lt;/div&gt; \n         `) \n         .join(&quot;&quot;); \n     container.setAttribute(&quot;data-loaded&quot;, &quot;true&quot;); \n } \n  \n export function populateContainer(containerId, category, lang) { \n     const container = document.querySelector(`#${containerId}`); \n     if (!container) return; \n  \n     const isLoaded = container.getAttribute(&quot;data-loaded&quot;) === &quot;true&quot;; \n     if (isLoaded) return; \n  \n     loadProjects(category, containerId, lang) \n         .then((data) =&gt; renderProjects(container, data)) \n         .catch((error) =&gt; console.error(`Failed to load projects: ${error}`)); \n }"
+          }
+        ]
+      },
+      {
+        "heading": "Multilingual Support",
+        "description": "Routes are dynamically generated for each language using baseRoutes and supportedLanguages.  Language switching is handled by updating the URL with the selected language code, triggering the router to load the corresponding content.",
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "// router.js \n export const supportedLanguages = [&quot;en&quot;, &quot;de&quot;, &quot;es&quot;, &quot;cz&quot;]; \n export const defaultLanguage = &quot;en&quot;; \n  \n const baseRoutes = { \n     home: &quot;home&quot;, \n     about: &quot;about&quot;, \n     services: &quot;services&quot;, \n     projects: &quot;projects&quot;, \n     contact: &quot;contact&quot;, \n }; \n  \n // Dynamically add service and project routes (if applicable) \n const categories = [&quot;motion-graphics&quot;, &quot;graphic-design&quot;, &quot;illustration&quot;]; \n categories.forEach((cat) =&gt; { \n     const keyBase = cat \n         .split(&quot;-&quot;) \n         .map((word) =&gt; word.charAt(0).toUpperCase() + word.slice(1)) \n         .join(&quot;&quot;); \n     baseRoutes[`services${keyBase}`] = `services-${cat}`; \n     baseRoutes[`projects${keyBase}`] = `projects-${cat}`; \n }); \n  \n const routes = {}; \n  \n // Generate routes dynamically for all languages \n supportedLanguages.forEach((lang) =&gt; { \n     Object.keys(baseRoutes).forEach((key) =&gt; { \n         routes[`/${lang}/${baseRoutes[key]}`] = baseRoutes[key]; \n     }); \n }); \n  \n // Add default &quot;/&quot; route (e.g., redirect to &quot;/en/home&quot;) \n routes[&quot;/&quot;] = &quot;home&quot;; \n  \n // Add 404 route for all languages \n supportedLanguages.forEach((lang) =&gt; { \n    routes[`/${lang}/404`] = &quot;404&quot;; \n }); \n  \n console.log(&quot;Generated routes: &quot;, routes); \n  \n // app.js \n document.querySelectorAll(&quot;.language-selector .nav-link&quot;).forEach((link) =&gt; { \n     link.addEventListener(&quot;click&quot;, (event) =&gt; { \n         event.preventDefault(); \n         const newLanguage = event.target.getAttribute(&quot;href&quot;).split(&quot;/&quot;)[1]; \n         const currentPath = window.location.pathname.split(&quot;/&quot;).slice(2).join(&quot;/&quot;) || &quot;home&quot;; // Get current path \n         const url = `/${newLanguage}/${currentPath}`; // Construct new URL \n         navigateTo(url); \n     }); \n });"
           }
         ]
       }
     ],
-    "github": null,
+    "github": "https://github.com/marseo84/vanilla-routing",
     "liveDemo": null,
     "content": [
       {
         "type": "heading",
         "level": 1,
-        "textContent": "Understanding Flexbox",
-        "date": "2024-12-05",
-        "status": "published"
+        "textContent": "Project Description",
+        "date": null,
+        "status": "draft"
       },
       {
+        "type": "paragraph",
+        "textContent": "The portfolio website leverages Bootstrap for a responsive layout and features a custom-built, vanilla JavaScript router for smooth, single-page navigation. A key feature is its multilingual support, allowing users to browse the content in multiple languages. All website data, including project details and translations, is dynamically loaded from JSON files, making content management and updates efficient. The site also includes a dynamic project loading system, where project details are fetched and displayed only when a specific category is selected, improving initial page load performance.",
+        "date": null,
+        "status": "draft"
+      }
+    ],
+    "media": {
+      "images": []
+    },
+    "conclusion": {
+      "summary": "",
+      "callToAction": ""
+    },
+    "projects": []
+  },
+  {
+    "id": 3,
+    "title": "Tic Tac Toe",
+    "slug": "tic-tac-toe",
+    "shortDescription": "Tic Tac Toe game - work in progress",
+    "description": "This Tic Tac Toe game currently supports two human players taking turns on the same device.",
+    "category": "javascript",
+    "tags": ["JavaScript", "CSS"],
+    "featured": false,
+    "publishDate": "2025-02-26",
+    "lastUpdateDate": "2025-02-26",
+    "popularity": 95,
+    "languages": ["html", "css", "javascript"],
+    "codeImage": [
+      {
+        "language": "",
+        "code": ""
+      },
+      {
+        "language": "",
+        "code": ""
+      }
+    ],
+    "codeSnippets": [
+      {
+        "heading": "Game Logic",
+        "description": "This snippet showcases the core game logic for handling player turns, including toggling the active player and updating the visual representation in the UI.",
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "function handleClick(event) { \n   const clickedSquare = event.target; \n  \n   // prevent further actions if the square is disabled \n   if (clickedSquare.classList.contains(&quot;disabled&quot;)) { \n     return; \n   } \n  \n   const squareId = clickedSquare.id; \n  \n   // get the active player \n   let activePlayer = \n     gamePlayer1.active === true ? &quot;gamePlayer1&quot; : &quot;gamePlayer2&quot;; \n  \n   // mark the square with the active player's symbol \n   if (clickedSquare.textContent === &quot;&quot;) { \n     clickedSquare.textContent = activePlayer === &quot;gamePlayer1&quot; ? &quot;X&quot; : &quot;O&quot;; \n  \n     // style the button according to the activePlayer \n     let activePlayerStyle = \n       activePlayer === &quot;gamePlayer1&quot; ? &quot;player-1&quot; : &quot;player-2&quot;; \n     clickedSquare.classList.add(activePlayerStyle); \n  \n     // disable the square \n     clickedSquare.classList.add(&quot;disabled&quot;); \n  \n     // update the winCombo \n     updateWinCombo(activePlayer, squareId, winCombos); \n  \n     // update combo status \n     updateComboStatus(activePlayer, winCombos); \n  \n     // check if active player wins the game \n     // checkWinner(activePlayer, winCombos); \n  \n     // check if active player can win in the next move \n     checkMatchball(activePlayer, winCombos); \n  \n     console.log(winCombos); \n   } \n  \n   // toggle active players \n   toggleActivePlayer(activePlayer); \n } \n  \n function toggleActivePlayer(activePlayer) { \n   if (activePlayer === &quot;gamePlayer1&quot;) { \n     if (gamePlayer1.active === true) gamePlayer1.active = false; \n     gamePlayer2.active = true; \n   } \n   if (activePlayer === &quot;gamePlayer2&quot;) { \n     if (gamePlayer2.active === true) { \n       gamePlayer2.active = false; \n       gamePlayer1.active = true; \n     } \n   }"
+          }
+        ]
+      },
+      {
+        "heading": "Win Condition Check",
+        "description": "This snippet demonstrates the logic used to determine the winner of the game by checking all possible winning combinations.",
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "function checkWinner(activePlayer, winCombos) { \n   // loop through each sub-array \n   winCombos.forEach((winCombo) =&gt; { \n     if (winCombo.status === &quot;open&quot;) { \n       // loop through each element within the sub-array \n       let counter = 0; \n       winCombo.combo.forEach((el) =&gt; { \n         el.takenBy === activePlayer && counter++; \n  \n         // handle victory \n         counter == 3 && handleGameEnd(&quot;win&quot;, activePlayer); \n         // return; // ? end the loop afer getting a winner \n       }); \n     } \n   }); \n }"
+          }
+        ]
+      }
+    ],
+    "github": "https://github.com/marseo84/tic-tac-toe",
+    "liveDemo": null,
+    "content": [
+      {
         "type": "heading",
-        "level": 2,
-        "textContent": "Introduction to Flexbox",
-        "date": "2024-12-05",
+        "level": 1,
+        "textContent": "Project Description",
+        "date": null,
         "status": "published"
       },
       {
         "type": "paragraph",
-        "textContent": "Flexbox, short for the Flexible Box Module, is a CSS layout model designed to arrange elements in a predictable and flexible manner, even when the size of the elements is unknown.",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "textContent": "Why Use Flexbox?",
-        "date": "2024-12-05",
+        "textContent": "This Tic Tac Toe game currently supports two human players taking turns on the same device. This project is a work in progress, with plans to evolve it into a full-stack application.",
+        "date": null,
         "status": "published"
       },
       {
         "type": "paragraph",
-        "textContent": "One of the primary properties in Flexbox is `flex-direction`, which determines the direction of the main axis. Options include row, column, row-reverse, and column-reverse.",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "textContent": "Practical Examples",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "paragraph",
-        "textContent": "Flexbox is particularly useful for creating responsive navigation bars, centering elements, and aligning items dynamically without using floats or positioning hacks.",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "list",
-        "listType": "ordered",
-        "textContent": [
-          "Flex Direction",
-          "Justify Content",
-          "Align Items",
-          "Align Self"
-        ],
-        "date": "2024-12-05",
+        "textContent": "Future enhancements include:",
+        "date": null,
         "status": "published"
       },
       {
         "type": "list",
         "listType": "unordered",
         "textContent": [
-          "Cross-Browser Support",
-          "Versatile Layouts",
-          "Reduced Complexity"
+          "Opponent: Implementing game logic to allow users to play against the computer with varying difficulty levels.",
+          "Data Persistence: Integrating a backend (Symfony, database) to record user data, game history, and move analysis. This will enable features like user profiles, leaderboards, and game statistics.",
+          "Move Analysis: Developing algorithms to analyze recorded games and identify optimal moves, potentially incorporating machine learning concepts."
         ],
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "quote",
-        "textContent": "'Flexbox is a game-changer for CSS layout.' - Developer A",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "image",
-        "src": "https://example.com/flexbox-diagram.png",
-        "alt": "Diagram illustrating Flexbox layout properties",
-        "date": "2024-12-05",
-        "status": "published"
-      },
-      {
-        "type": "video",
-        "url": "https://example.com/flexbox-tutorial.mp4",
-        "caption": "Introduction to Flexbox - Video Tutorial",
         "date": "2024-12-05",
         "status": "published"
       }
     ],
     "media": {
-      "images": [
-        {
-          "url": "https://example.com/flexbox-diagram.png",
-          "alt": "Diagram illustrating Flexbox layout properties"
-        }
-      ]
+      "images": []
     },
     "conclusion": {
-      "summary": "Flexbox simplifies CSS layout by providing flexible alignment, making it a go-to choice for modern web development.",
-      "callToAction": "Try incorporating Flexbox into your next project to see its power in action!"
+      "summary": "",
+      "callToAction": ""
     },
-    "projects": [1, 2]
+    "projects": []
+  },
+  {
+    "id": 4,
+    "title": "Hangman",
+    "slug": "hangman",
+    "shortDescription": "This project is a work-in-progress Hangman game designed as a component of a larger language learning application.",
+    "description": "This project is a work-in-progress Hangman game designed as a component of a larger language learning application. It utilizes HTML, SCSS, and JavaScript to provide an interactive vocabulary learning experience. The game dynamically fetches word lists from JSON files, allowing for easy expansion with different languages and difficulty levels. Users can select their target language, proficiency level (A1-C1), and vocabulary category (e.g., animals, countries) to customize their learning experience. The game features a visual representation of the classic Hangman figure, updating with each incorrect guess. This project demonstrates my skills in front-end development, data fetching, and dynamic content manipulation.",
+    "category": "javascript",
+    "tags": ["JavaScript", "CSS"],
+    "featured": false,
+    "publishDate": "2025-02-26",
+    "lastUpdateDate": "2025-02-26",
+    "popularity": 95,
+    "languages": ["html", "css", "javascript"],
+    "codeImage": [
+      {
+        "language": "",
+        "code": ""
+      },
+      {
+        "language": "",
+        "code": ""
+      }
+    ],
+    "codeSnippets": [
+      {
+        "heading": "Dynamic Data Fetching and Language Selection",
+        "description": "Asynchronous data fetching using fetch and handling language selection.",
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "async function fetchVocabData(language) { \n   try { \n     const response = await fetch(`./assets/data/vocab-${language}.json`); \n     if (!response.ok) throw new Error(&quot;Network response NOT ok&quot;); \n     vocabData = await response.json(); \n     populateCategories(language); // Populate category dropdown \n   } catch (error) { \n     console.error(&quot;Error fetching vocab data: &quot;, error); \n   } \n } \n  \n languageSelect.addEventListener(&quot;change&quot;, (event) =&gt; { \n   const selectedLanguage = event.target.value; \n  fetchVocabData(selectedLanguage); \n });"
+          }
+        ]
+      },
+      {
+        "heading": "Word Rendering and Game Logic",
+        "description": "",
+        "languages": [
+          {
+            "language": "javascript",
+            "code": "function renderWord(word) { \n   wordEl.innerHTML = &quot;&quot;;  \n   for (let i = 0; i &lt; word.length; i++) { \n     const letterEl = document.createElement(&quot;div&quot;); \n     letterEl.textContent = word.charAt(i); \n     letterEl.classList.add(&quot;letter&quot;, &quot;hidden&quot;); \n     wordEl.appendChild(letterEl); \n   } \n }"
+          }
+        ]
+      }
+    ],
+    "github": "https://github.com/marseo84/hangman",
+    "liveDemo": null,
+    "content": [
+      {
+        "type": "heading",
+        "level": 1,
+        "textContent": "Project Description",
+        "date": null,
+        "status": "draft"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This project is a work-in-progress Hangman game designed as a component of a larger language learning application. It utilizes HTML, SCSS, and JavaScript to provide an interactive vocabulary learning experience. The game dynamically fetches word lists from JSON files, allowing for easy expansion with different languages and difficulty levels. Users can select their target language, proficiency level (A1-C1), and vocabulary category (e.g., animals, countries) to customize their learning experience. The game features a visual representation of the classic Hangman figure, updating with each incorrect guess. This project demonstrates my skills in front-end development, data fetching, and dynamic content manipulation.",
+        "date": null,
+        "status": "draft"
+      }
+    ],
+    "media": {
+      "images": []
+    },
+    "conclusion": {
+      "summary": "",
+      "callToAction": ""
+    },
+    "projects": []
   }
 ]
