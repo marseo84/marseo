@@ -326,5 +326,96 @@
       "callToAction": ""
     },
     "projects": []
+  },
+  {
+    "id": 5,
+    "title": "Shelter",
+    "slug": "shelter",
+    "shortDescription": "This PHP application is a simple yet functional animal adoption platform.",
+    "description": "This PHP application is a simple yet functional animal adoption platform featuring CRUD operations and user authentication. It allows users to browse available animals, view detailed information, and register to adopt. An administrative panel provides full control over the system, enabling administrators to manage animal listings and user accounts.",
+    "category": "php",
+    "tags": ["PHP", "Bootstrap"],
+    "featured": true,
+    "publishDate": "2025-02-26",
+    "lastUpdateDate": "2025-02-26",
+    "popularity": 95,
+    "languages": ["php", "html", "css"],
+    "codeImage": [
+      {
+        "language": "",
+        "code": ""
+      },
+      {
+        "language": "",
+        "code": ""
+      }
+    ],
+    "codeSnippets": [
+      {
+        "heading": "Dynamic SQL Query Construction",
+        "description": "SQL queries are built dynamically based on user input.",
+        "languages": [
+          {
+            "language": "php",
+            "code": "$filtersSql = implode(&quot; AND &quot;, $filtersCleanSqlAll); \n if (!empty($filterSql)) { \n     $sqlAnimals = &quot;SELECT * FROM `animal` WHERE &quot; . $filtersSql; \n } else { \n     $sqlAnimals = &quot;SELECT * FROM `animal`&quot;; \n } \n $resultAnimals = mysqli_query($connect, $sqlAnimals);"
+          }
+        ]
+      },
+      {
+        "heading": "Session-Based Authentication",
+        "description": "Handling and redirecting users based on their roles.",
+        "languages": [
+          {
+            "language": "php",
+            "code": "if (mysqli_num_rows($result) == 1) { \n     if ($row[&quot;status&quot;] == &quot;admin&quot;) { \n         $_SESSION[&quot;admin&quot;] = $row[&quot;id&quot;]; \n         header(&quot;Location: dashboard.php&quot;); \n     } else { \n         $_SESSION[&quot;user&quot;] = $row[&quot;id&quot;]; \n         header(&quot;Location: index.php&quot;); \n     } \n }"
+          }
+        ]
+      },
+      {
+        "heading": "File Upload Handling",
+        "description": "Handling different scenarios when managing file uploads.",
+        "languages": [
+          {
+            "language": "php",
+            "code": "$picture = fileUpload($_FILES[&quot;picture&quot;], &quot;animal&quot;); \n // ... \n if ($_FILES[&quot;picture&quot;][&quot;error&quot;] == 4) { \n     #query without picture \n     $sqlUpdate = &quot;UPDATE `animal` SET `name`='{$name}', \n `location`='{$location}',`description`='{$description}',`size`='{$size}',`age`='{$age}',`vaccinated`='{$vaccinated}',`breed`='{$breed}',`status`='{$status}',`animal_type`='{$animal_type}',`shelter`='{$shelter}' WHERE id = '{$id}'&quot;; \n   } else { \n     #remove old picture \n     if ($currentPicture != &quot;animal-avatar.webp&quot;) { \n       unlink(&quot;../pictures/animals/{$currentPicture}&quot;); \n     } \n     #query with picture \n     $sqlUpdate = &quot;UPDATE `animal` SET \n `name`='{$name}',`picture`='{$picture[0]}',`location`='{$location}',`description`='{$description}',`size`='{$size}',`age`='{$age}',`vaccinated`='{$vaccinated}',`breed`='{$breed}',`status`='{$status}',`animal_type`='{$animal_type}',`shelter`='{$shelter}' WHERE id = '{$id}'&quot;; \n   } \n   $resultUpdate = mysqli_query($connect, $sqlUpdate);"
+          }
+        ]
+      },
+      {
+        "heading": "User Registration Validation",
+        "description": "Validating user input.",
+        "languages": [
+          {
+            "language": "php",
+            "code": "if (empty($email)) { \n     $error = true; \n     $emailError = &quot;Email cannot be empty.&quot;; \n } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { \n     $error = true; \n     $emailError = &quot;Please type a valid email.&quot;; \n } else { \n     $searchIfEmailExists = &quot;SELECT * FROM user WHERE email = '$email'&quot;; \n     $resultEmail = mysqli_query($connect, $searchIfEmailExists); \n     if (mysqli_num_rows($resultEmail) != 0) { \n         $error = true; \n         $emailError = &quot;Email already exists.&quot;; \n     } \n }"
+          }
+        ]
+      }
+    ],
+    "github": "https://github.com/marseo84/animal-shelter-php-crud",
+    "liveDemo": null,
+    "content": [
+      {
+        "type": "heading",
+        "level": 1,
+        "textContent": "Project Description",
+        "date": null,
+        "status": "draft"
+      },
+      {
+        "type": "paragraph",
+        "textContent": "This PHP application is a simple yet functional animal adoption platform featuring CRUD operations and user authentication. It allows users to browse available animals, view detailed information, and register to adopt. An administrative panel provides full control over the system, enabling administrators to manage animal listings and user accounts.",
+        "date": null,
+        "status": "draft"
+      }
+    ],
+    "media": {
+      "images": []
+    },
+    "conclusion": {
+      "summary": "",
+      "callToAction": ""
+    },
+    "projects": []
   }
 ]
